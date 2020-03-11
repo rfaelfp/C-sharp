@@ -1,0 +1,10 @@
+C:\Users\rafael.pedrosa\Documents\C#\exercicio06\exercicio06\bin\Debug\netcoreapp3.1\exercicio06.exe
+C:\Users\rafael.pedrosa\Documents\C#\exercicio06\exercicio06\bin\Debug\netcoreapp3.1\exercicio06.deps.json
+C:\Users\rafael.pedrosa\Documents\C#\exercicio06\exercicio06\bin\Debug\netcoreapp3.1\exercicio06.runtimeconfig.json
+C:\Users\rafael.pedrosa\Documents\C#\exercicio06\exercicio06\bin\Debug\netcoreapp3.1\exercicio06.runtimeconfig.dev.json
+C:\Users\rafael.pedrosa\Documents\C#\exercicio06\exercicio06\bin\Debug\netcoreapp3.1\exercicio06.dll
+C:\Users\rafael.pedrosa\Documents\C#\exercicio06\exercicio06\bin\Debug\netcoreapp3.1\exercicio06.pdb
+C:\Users\rafael.pedrosa\Documents\C#\exercicio06\exercicio06\obj\Debug\netcoreapp3.1\exercicio06.AssemblyInfoInputs.cache
+C:\Users\rafael.pedrosa\Documents\C#\exercicio06\exercicio06\obj\Debug\netcoreapp3.1\exercicio06.AssemblyInfo.cs
+C:\Users\rafael.pedrosa\Documents\C#\exercicio06\exercicio06\obj\Debug\netcoreapp3.1\exercicio06.dll
+C:\Users\rafael.pedrosa\Documents\C#\exercicio06\exercicio06\obj\Debug\netcoreapp3.1\exercicio06.pdb

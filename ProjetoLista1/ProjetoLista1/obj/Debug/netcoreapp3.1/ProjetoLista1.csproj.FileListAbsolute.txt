@@ -1,0 +1,11 @@
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\bin\Debug\netcoreapp3.1\ProjetoLista1.exe
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\bin\Debug\netcoreapp3.1\ProjetoLista1.deps.json
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\bin\Debug\netcoreapp3.1\ProjetoLista1.runtimeconfig.json
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\bin\Debug\netcoreapp3.1\ProjetoLista1.runtimeconfig.dev.json
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\bin\Debug\netcoreapp3.1\ProjetoLista1.dll
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\bin\Debug\netcoreapp3.1\ProjetoLista1.pdb
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\obj\Debug\netcoreapp3.1\ProjetoLista1.AssemblyInfoInputs.cache
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\obj\Debug\netcoreapp3.1\ProjetoLista1.AssemblyInfo.cs
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\obj\Debug\netcoreapp3.1\ProjetoLista1.dll
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\obj\Debug\netcoreapp3.1\ProjetoLista1.pdb
+C:\Users\rafael.pedrosa\source\repos\ProjetoLista1\ProjetoLista1\obj\Debug\netcoreapp3.1\ProjetoLista1.csprojAssemblyReference.cache

@@ -1,0 +1,11 @@
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\bin\Debug\netcoreapp3.1\exercicio08.exe
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\bin\Debug\netcoreapp3.1\exercicio08.deps.json
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\bin\Debug\netcoreapp3.1\exercicio08.runtimeconfig.json
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\bin\Debug\netcoreapp3.1\exercicio08.runtimeconfig.dev.json
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\bin\Debug\netcoreapp3.1\exercicio08.dll
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\bin\Debug\netcoreapp3.1\exercicio08.pdb
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\obj\Debug\netcoreapp3.1\exercicio08.csprojAssemblyReference.cache
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\obj\Debug\netcoreapp3.1\exercicio08.AssemblyInfoInputs.cache
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\obj\Debug\netcoreapp3.1\exercicio08.AssemblyInfo.cs
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\obj\Debug\netcoreapp3.1\exercicio08.dll
+C:\Users\rafael.pedrosa\source\repos\exercicio08\exercicio08\obj\Debug\netcoreapp3.1\exercicio08.pdb
