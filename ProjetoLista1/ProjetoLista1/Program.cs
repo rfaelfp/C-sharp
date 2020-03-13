@@ -185,16 +185,17 @@ namespace ProjetoLista1
 			}
 			else if (exercicioEscolha == 20)
 			{
-				double raio, cumprimentoEsfera, areaDaEsfera, volumeDaEsfera;
-				Console.Write("Digite o tamanho do Raio: ");
-				raio = Convert.ToDouble(Console.ReadLine());
-				cumprimentoEsfera = 2 * (Math.PI) * raio;
-				areaDaEsfera = 3.14 * Math.Pow(raio, 2);
-				volumeDaEsfera = 1/4 * (Math.PI) * raio;
+				    double raio, cumprimentoEsfera, areaEsfera, volumeEsfera;
+				    Console.WriteLine("Digite o tamanho do raio: ");
+				    raio = Convert.ToDouble(Console.ReadLine());
 
-				Console.WriteLine($"O cumprimento da esfera é {cumprimentoEsfera}");
-				Console.WriteLine($"A área da esfera é {areaDaEsfera}");
-				Console.WriteLine($"O volume da esfera é {volumeDaEsfera}");
+				    cumprimentoEsfera = 2 * (Math.PI) * raio;
+				    areaEsfera = (Math.PI) * Math.Pow(raio, 2);
+				    volumeEsfera = (4 * (Math.PI) * Math.Pow(raio, 3)) / 3;
+
+				    Console.WriteLine($"O cumprimento da esfera é {cumprimentoEsfera}");
+				    Console.WriteLine($"Á área da esfera é {areaEsfera}");
+				    Console.WriteLine($"O volume da esfera é {volumeEsfera}");
 			}// voltar porque não está dando para dividir 1/4
 			else if (exercicioEscolha == 21)
 			{
