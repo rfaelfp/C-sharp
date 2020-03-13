@@ -209,6 +209,14 @@ namespace ProjetoLista1
 				potenciaUtilizada = totalMetrosQuadrados * 18;
 				Console.WriteLine($"O espaço possui {totalMetrosQuadrados}m² sendo necessário utilizar {potenciaUtilizada} W para iluminar.");
 			}
+			else if (exercicioEscolha == 22)
+			{
+				    int numeroLados, resultadoNumeroDiagonais;
+				    Console.Write("Digite a quantidade de lados do pológono: ");
+				    numeroLados = Convert.ToInt32(Console.ReadLine());
+				    resultadoNumeroDiagonais = numeroLados * (numeroLados - 3) / 2;
+				    Console.WriteLine($"O número de diagonais de um polígono é {resultadoNumeroDiagonais}");
+			}
 			}
 		}
 }
