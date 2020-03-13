@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rafael.pedrosa\\source\\repos\\ProjetoLista1\\ProjetoLista1\\ProjetoLista1.csproj",
+      "projectUniqueName": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\ProjetoLista1\\ProjetoLista1\\ProjetoLista1.csproj",
       "projectName": "ProjetoLista1",
-      "projectPath": "C:\\Users\\rafael.pedrosa\\source\\repos\\ProjetoLista1\\ProjetoLista1\\ProjetoLista1.csproj",
+      "projectPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\ProjetoLista1\\ProjetoLista1\\ProjetoLista1.csproj",
       "packagesPath": "C:\\Users\\rafael.pedrosa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rafael.pedrosa\\source\\repos\\ProjetoLista1\\ProjetoLista1\\obj\\",
+      "outputPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\ProjetoLista1\\ProjetoLista1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rafael.pedrosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
