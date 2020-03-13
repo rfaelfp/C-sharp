@@ -242,6 +242,21 @@ namespace ProjetoLista1
 				    Console.WriteLine($"A conversão em marco alemã é {conversaoMarco.ToString("C2")}");
 				    Console.WriteLine($"A conversão em libra esterlian é {conversaoLibra.ToString("C2")}");	
 			}
+			else if (exercicioEscolha == 25)
+			{
+				    double hora, minuto, conversaoHora, totalMinutos, totalSegundos;
+				    Console.WriteLine("Digite a hora requerida: ");
+				    hora = Convert.ToDouble(Console.ReadLine());
+				    Console.WriteLine("Digite os minutos requeridos: ");
+				    minuto = Convert.ToDouble(Console.ReadLine());
+				    conversaoHora = hora * 60;
+				    totalMinutos = conversaoHora + minuto;
+				    totalSegundos = totalMinutos * 60;
+
+				    Console.WriteLine($"A conversão das horas em minutos é {conversaoHora}");
+				    Console.WriteLine($"O total em minutos é {totalMinutos}");
+				    Console.WriteLine($"O total em segudos é {totalSegundos}");
+			}
 			}
 		}
 }
