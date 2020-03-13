@@ -217,6 +217,17 @@ namespace ProjetoLista1
 				    resultadoNumeroDiagonais = numeroLados * (numeroLados - 3) / 2;
 				    Console.WriteLine($"O número de diagonais de um polígono é {resultadoNumeroDiagonais}");
 			}
+			else if (exercicioEscolha == 23)
+			{
+				    double medidaEixoX, medidaEixoY, resultado;
+				    Console.WriteLine("Digite o valor do primeiro angulo do triângulo: ");
+				    medidaEixoX = Convert.ToDouble(Console.ReadLine());
+				    Console.WriteLine("Digite o valor do primeiro angulo do triângulo: ");
+				    medidaEixoY = Convert.ToDouble(Console.ReadLine());
+
+            resultado = 180 - medidaEixoX - medidaEixoY;
+            Console.WriteLine($"O do uiltimo ângulo do triangulo é {resultado}");
+			}
 			}
 		}
 }
