@@ -225,8 +225,22 @@ namespace ProjetoLista1
 				    Console.WriteLine("Digite o valor do primeiro angulo do triângulo: ");
 				    medidaEixoY = Convert.ToDouble(Console.ReadLine());
 
-            resultado = 180 - medidaEixoX - medidaEixoY;
-            Console.WriteLine($"O do uiltimo ângulo do triangulo é {resultado}");
+            			    resultado = 180 - medidaEixoX - medidaEixoY;
+            			    Console.WriteLine($"O do uiltimo ângulo do triangulo é {resultado}");
+			}
+			else if (exercicioEscolha == 24)
+			{
+				    double montanteDinheiro, conversaoDolares, conversaoMarco, conversaoLibra;
+				    Console.Write("Digite o montante em reais: ");
+				    montanteDinheiro = Convert.ToDouble(Console.ReadLine());
+
+				    conversaoDolares = montanteDinheiro / 1.8;
+				    conversaoMarco = montanteDinheiro / 2;
+				    conversaoLibra = montanteDinheiro / 3.7;
+
+				    Console.WriteLine($"A conversão em dolar é {conversaoDolares.ToString("C2")}");
+				    Console.WriteLine($"A conversão em marco alemã é {conversaoMarco.ToString("C2")}");
+				    Console.WriteLine($"A conversão em libra esterlian é {conversaoLibra.ToString("C2")}");	
 			}
 			}
 		}
