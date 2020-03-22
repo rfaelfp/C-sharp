@@ -9,7 +9,7 @@ namespace ProjetoLista1
 			int exercicioEscolha;
 			Console.Write("Gentileza escolher entre os exercícios 01 ao 25: ");
 			exercicioEscolha = Convert.ToInt32(Console.ReadLine());
-			if (exercicioEscolha < 1 | exercicioEscolha > 25)
+			if (exercicioEscolha < 1 | exercicioEscolha > 26)
 				Console.WriteLine("O número não é válido.");
 			else if (exercicioEscolha == 1)
 			{
@@ -377,7 +377,7 @@ namespace ProjetoLista1
 				Console.WriteLine($"A conversão em marco alemã é {conversaoMarco.ToString("C2")}");
 				Console.WriteLine($"A conversão em libra esterlian é {conversaoLibra.ToString("C2")}");
 			}
-			else if (exercicioEscolha == 25)
+			else 
 			{
 				double hora, minuto, conversaoHora, totalMinutos, totalSegundos;
 				Console.WriteLine("Digite a hora requerida: ");

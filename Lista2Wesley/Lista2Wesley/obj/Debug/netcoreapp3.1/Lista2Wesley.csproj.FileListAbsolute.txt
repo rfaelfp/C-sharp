@@ -1,0 +1,11 @@
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\bin\Debug\netcoreapp3.1\Lista2Wesley.exe
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\bin\Debug\netcoreapp3.1\Lista2Wesley.deps.json
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\bin\Debug\netcoreapp3.1\Lista2Wesley.runtimeconfig.json
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\bin\Debug\netcoreapp3.1\Lista2Wesley.runtimeconfig.dev.json
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\bin\Debug\netcoreapp3.1\Lista2Wesley.dll
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\bin\Debug\netcoreapp3.1\Lista2Wesley.pdb
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcoreapp3.1\Lista2Wesley.csprojAssemblyReference.cache
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcoreapp3.1\Lista2Wesley.AssemblyInfoInputs.cache
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcoreapp3.1\Lista2Wesley.AssemblyInfo.cs
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcoreapp3.1\Lista2Wesley.dll
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcoreapp3.1\Lista2Wesley.pdb
