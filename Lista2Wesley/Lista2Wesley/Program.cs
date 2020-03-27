@@ -124,27 +124,6 @@ namespace Lista2Wesley
 					Console.WriteLine("4º quadrante");
 				}
 			}
-			if (exercicioNumero == 6)
-			{
-				char[] valoresDinheiro = new char[5] {'+', '-', '*', '/', '^'};
-				int valorIndex;
-				double num1, num2, resultado, operador;
-				//char operador;
-				Console.WriteLine("Digite o primeiro número: ");
-				num1 = Convert.ToDouble(Console.ReadLine());
-				Console.WriteLine("Digite o primeiro número: ");
-				num2 = Convert.ToDouble(Console.ReadLine());
-
-				valorIndex = Convert.ToInt32(Console.ReadLine());
-				operador = valoresDinheiro[valorIndex];
-
-				resultado = num1, operador, num2;
-				Console.WriteLine(resultado);
-
-
-				
-
-			}
         }
     }
 }
