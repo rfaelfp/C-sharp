@@ -100,13 +100,45 @@ namespace ConsoleApp1
                 Console.Write("Digite o número que o fatorial será iniciado: ");
                 numero = Convert.ToInt32(Console.ReadLine());
                 valorConsole = numero;
-
+                if (numero < 0)
+                {
+                    Console.Write("O número é inválido");
+                }
+                else if (numero == 0)
+                {
+                    Console.Write("O fatorial de 0 é 1");
+                }
+                else { 
                 for(i = (numero - 1); i > 1; --i)
                 {
                     numero *=  (i);
 
                 }
                 Console.Write($"!{valorConsole} = {numero}");
+                }
+            }
+            if (questaoNumero == 7)
+            {
+                int numeroEntrada, i, resultado3 = 0, total3 = 0;
+                int[] multiplos = { 3, 5 };
+                
+                Console.Write("Escreva o número da entrada: ");
+                numeroEntrada = Convert.ToInt32(Console.ReadLine());
+                //int[] multiplos3 = new int[numeroEntrada / 3 + 1];
+
+                for (i = 1; i < numeroEntrada; i+=3)
+                {
+                    if (numeroEntrada > resultado3)
+                    {
+                        resultado3 += 3;
+                        total3 += resultado3;
+                        Console.Write($"{resultado3}, ");
+                        //multiplos3[i] += resultado3;
+                        //i += 1;
+                    }
+                }
+                Console.WriteLine($"Total da linha: {total3}");
+                //Console.WriteLine("[{0}]", string.Join(", ", multiplos3));
             }
         }
     }
