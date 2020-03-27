@@ -181,7 +181,7 @@ namespace ConsoleApp1
                 Console.WriteLine($"A maior altura é {maiorAltura}");
                 Console.WriteLine($"A média de altura das mulheres é {mediaAlturaMulheres}");
                 Console.WriteLine($"A média de altura dos homens é {mediaAlturaHomens}");
-                Console.WriteLine($"A média da pupulação é {(mediaAlturaMulheres + mediaAlturaHomens) / quantidade}");
+                Console.WriteLine($"A média da pupulação é {(alturaTotalMulheres + AlturaTotalHomens) / quantidade}");
                 Console.WriteLine($"O percentual de mulheres na população é {(contadorMulheres * 100) / quantidade}%");
                 Console.Write($"A percentual de homens da população é {(contadorHomens * 100) / quantidade }%");
 
