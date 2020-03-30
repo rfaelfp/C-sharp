@@ -119,26 +119,77 @@ namespace ConsoleApp1
             }
             if (questaoNumero == 7)
             {
-                int numeroEntrada, i, resultado3 = 0, total3 = 0;
-                
-                Console.Write("Escreva o número da entrada: ");
-                numeroEntrada = Convert.ToInt32(Console.ReadLine());
-                //int[] multiplos3 = new int[numeroEntrada / 3 + 1];
+                int i, Base, soma = 0;
 
-                for (i = 1; i < numeroEntrada; i+=3)
+                Console.WriteLine("digite o valor limite: ");
+                Base = Convert.ToInt32(Console.ReadLine());
+
+                for (i = 3; i <= Base; i += 3)
                 {
-                    if (numeroEntrada > resultado3)
+
+                    Console.Write(i + ", ");
+                    soma += i;
+
+                }
+                Console.WriteLine("a soma é:" + soma);
+                soma = 0;
+
+                for (i = 5; i <= Base; i += 5)
+                {
+                    Console.Write(i + ", ");
+                    soma += i;
+                }
+                Console.WriteLine("A soma das linhas é: " + soma);
+                soma = 0;
+                int exp = 1;
+
+                for (i = 0; i <= Base; exp++)
+                {
+                    soma += i;
+                    i = Convert.ToInt32(Math.Pow(2, exp));
+                    if (i < Base)
                     {
-                        resultado3 += 3;
-                        total3 += resultado3;
-                        Console.Write($"{resultado3}, ");
-                        //multiplos3[i] += resultado3;
-                        //i += 1;
+                        Console.Write(i + ", ");
                     }
                 }
-                Console.WriteLine($"Total da linha: {total3}");
-                //Console.WriteLine("[{0}]", string.Join(", ", multiplos3));
+                Console.WriteLine("A soma das linhas é: " + soma);
+                soma = 0;
+                int b = 1;
+
+
+                for (i = 0; i <= Base; b++)
+                {
+
+                    soma += i;
+                    i = Convert.ToInt32(Math.Pow(b, 3));
+                    if (i < Base)
+                    {
+                        Console.Write(i + ", ");
+                    }
+                }
+                Console.WriteLine("A soma das linhas é: " + soma);
+
             }
+            /*int numeroEntrada, i, resultado3 = 0, total3 = 0;
+
+            Console.Write("Escreva o número da entrada: ");
+            numeroEntrada = Convert.ToInt32(Console.ReadLine());
+            //int[] multiplos3 = new int[numeroEntrada / 3 + 1];
+
+            for (i = 1; i < numeroEntrada; i+=3)
+            {
+                if (numeroEntrada > resultado3)
+                {
+                    resultado3 += 3;
+                    total3 += resultado3;
+                    Console.Write($"{resultado3}, ");
+                    //multiplos3[i] += resultado3;
+                    //i += 1;
+                }
+            }
+            Console.WriteLine($"Total da linha: {total3}");
+            //Console.WriteLine("[{0}]", string.Join(", ", multiplos3));
+        }*/
             if (questaoNumero == 8)
             {
                 int quantidade;
@@ -185,6 +236,30 @@ namespace ConsoleApp1
                 Console.WriteLine($"O percentual de mulheres na população é {(contadorMulheres * 100) / quantidade}%");
                 Console.Write($"A percentual de homens da população é {(contadorHomens * 100) / quantidade }%");
 
+            }
+            if (questaoNumero == 9)
+            {
+                int numeroLimite, i, numero1 = 0, numero2 = 1, total = 0;
+                Console.Write("Digite o número limite da sequencia Fibonacci: ");
+                numeroLimite = Convert.ToInt32(Console.ReadLine());
+                for (i = 0; i < numeroLimite; i = i)
+                {
+                    i = numero1 + numero2;
+                    if (numero1 < numero2)
+                    {
+                        numero1 = i;
+                    }
+                    else
+                    {
+                        numero2 = i;
+                    }
+                    if (i < numeroLimite)
+                    {
+                        total += i;
+                        Console.Write(i + ", ");
+                    }
+                }
+                Console.Write(/n + "O total é " + total);
             }
         }
     }
