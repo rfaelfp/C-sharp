@@ -20,28 +20,30 @@ namespace ConsoleApp1
                     Console.WriteLine($"{i} x {n} = {resultado}");
                 }
             }
-            if (questaoNumero == 2) { 
-            int limite1, limite2, i, total = 0;
-            Console.Write("Digite o limite mais baixo: ");
-            limite1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Digite o limite mais alto: ");
-            limite2 = Convert.ToInt32(Console.ReadLine());
-
-            for (i = limite1; i <= limite2; i++)
+            if (questaoNumero == 2)
             {
-                if (i % 2 == 0)
+                int limite1, limite2, i, total = 0;
+                Console.Write("Digite o limite mais baixo: ");
+                limite1 = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Digite o limite mais alto: ");
+                limite2 = Convert.ToInt32(Console.ReadLine());
+
+                for (i = limite1; i <= limite2; i++)
                 {
-                    total++;
+                    if (i % 2 == 0)
+                    {
+                        Console.Write(i + ", ");
+                    }
                 }
-            }
-            Console.WriteLine(total);
+                Console.WriteLine(total);
             }
             if (questaoNumero == 3)
             {
                 int numeros = 0, contador = 0, i, resultado;
 
-                for (i = 1; i > 0; i++) { 
-                Console.WriteLine("Digite os números: ");
+                for (i = 1; i > 0; i++)
+                {
+                    Console.WriteLine("Digite os números: ");
                     i = Convert.ToInt32(Console.ReadLine());
                     if (i % 2 == 1)
                     {
@@ -55,7 +57,7 @@ namespace ConsoleApp1
             }
             if (questaoNumero == 4)
             {
-                int i, contador = 0,  resultado;
+                int i, contador = 0;
                 Console.WriteLine("Aperte qualquer tecla para encontrar o quinto número maior que 1000 cuja a divisão por 11 tenha resto 5");
                 for (i = 1000; i > 1; i++)
                 {
@@ -91,7 +93,7 @@ namespace ConsoleApp1
                 Console.WriteLine($"O maior número é {maiorNumero}");
                 Console.WriteLine($"O menor número é {menorNumero}");
                 soma /= numeros.Length;
-                Console.WriteLine($"A soma aritimética é {soma}");
+                Console.WriteLine($"A média aritimética é {soma}");
 
             }
             if (questaoNumero == 6)
@@ -108,13 +110,14 @@ namespace ConsoleApp1
                 {
                     Console.Write("O fatorial de 0 é 1");
                 }
-                else { 
-                for(i = (numero - 1); i > 1; --i)
+                else
                 {
-                    numero *=  (i);
+                    for (i = (numero - 1); i > 1; --i)
+                    {
+                        numero *= (i);
 
-                }
-                Console.Write($"!{valorConsole} = {numero}");
+                    }
+                    Console.Write($"!{valorConsole} = {numero}");
                 }
             }
             if (questaoNumero == 7)
@@ -159,7 +162,6 @@ namespace ConsoleApp1
 
                 for (i = 0; i <= Base; b++)
                 {
-
                     soma += i;
                     i = Convert.ToInt32(Math.Pow(b, 3));
                     if (i < Base)
@@ -170,26 +172,6 @@ namespace ConsoleApp1
                 Console.WriteLine("A soma das linhas é: " + soma);
 
             }
-            /*int numeroEntrada, i, resultado3 = 0, total3 = 0;
-
-            Console.Write("Escreva o número da entrada: ");
-            numeroEntrada = Convert.ToInt32(Console.ReadLine());
-            //int[] multiplos3 = new int[numeroEntrada / 3 + 1];
-
-            for (i = 1; i < numeroEntrada; i+=3)
-            {
-                if (numeroEntrada > resultado3)
-                {
-                    resultado3 += 3;
-                    total3 += resultado3;
-                    Console.Write($"{resultado3}, ");
-                    //multiplos3[i] += resultado3;
-                    //i += 1;
-                }
-            }
-            Console.WriteLine($"Total da linha: {total3}");
-            //Console.WriteLine("[{0}]", string.Join(", ", multiplos3));
-        }*/
             if (questaoNumero == 8)
             {
                 int quantidade;
@@ -242,9 +224,9 @@ namespace ConsoleApp1
                 int numeroLimite, i, numero1 = 0, numero2 = 1, total = 0;
                 Console.Write("Digite o número limite da sequencia Fibonacci: ");
                 numeroLimite = Convert.ToInt32(Console.ReadLine());
-                for (i = 0; i < numeroLimite; i = i)
+                Console.Write("0, 1, ");
+                for (i = 1; i <= numeroLimite; i = i)
                 {
-                    i = numero1 + numero2;
                     if (numero1 < numero2)
                     {
                         numero1 = i;
@@ -253,13 +235,87 @@ namespace ConsoleApp1
                     {
                         numero2 = i;
                     }
-                    if (i < numeroLimite)
+                    if (i <= numeroLimite)
                     {
+                        Console.Write($"{i}, ");
                         total += i;
-                        Console.Write(i + ", ");
+                        i = numero1 + numero2;
                     }
                 }
-                Console.Write(/n + "O total é " + total);
+                total += 1;
+                Console.Write("O total é " + total);
+            }
+            if (questaoNumero == 10)
+            {
+
+            }
+            if (questaoNumero == 11)
+            {
+                double chico = 1.5, juca = 1.1, i;
+                int totalAnos = 0;
+                for (i = juca; i < chico; i = juca)
+                {
+                    chico += 0.02;
+                    juca += 0.03;
+                    totalAnos++;
+                }
+                Console.Write($"Será necessário {totalAnos} anos para que Juca seja maior que Chico.");
+            }
+            if (questaoNumero == 12)
+            {
+
+                int numeroEntrada, i, contador = 0;
+                
+                Console.Write("Digite o número para saber se é primo: ");
+                numeroEntrada = Convert.ToInt32(Console.ReadLine());
+                for (i = 1; i <= numeroEntrada; i++)
+                {
+                    if (numeroEntrada % i == 0)
+                    {
+                        contador++;
+                    }
+                }
+                if (contador == 2)
+                {
+                    Console.WriteLine($"O número {numeroEntrada} é primo!");
+                }
+                else
+                {
+                    Console.WriteLine($"O número {numeroEntrada} não é primo!");
+                }
+
+            }
+            if (questaoNumero == 13)
+            {
+                double limite, c, f;
+
+                Console.WriteLine("Digite o valor em fahrenheit de 50 a 70: ");
+                limite = Convert.ToDouble(Console.ReadLine());
+
+                for (f = 0; f <= limite; f++)
+                {
+
+                    Console.Write("fahrenheit" + f);
+
+                    c = (f - 32) / 1.8;
+
+
+                    Console.WriteLine(" \t celsius " + c.ToString("F2"));
+
+                }
+            }
+            if (questaoNumero == 14)
+            {
+                int i, quantidadeCasaXadrez = 64;
+                double quantidade = 1, total = 1;
+                Console.WriteLine("Programa para calcular quantidade de grãos de trigo em um tabuleiro");
+                for (i = 1; i <= quantidadeCasaXadrez; i++)
+                {
+                    quantidade *= 2;
+                    total += quantidade;
+                }
+                Console.Write($"O monge receberá {total} grãos da rainha.");
+
             }
         }
     }
