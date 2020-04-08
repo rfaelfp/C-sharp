@@ -275,7 +275,7 @@ namespace ConsoleApp1
                         contador++;
                     }
                 }
-                if (contador == 2)
+                if (contador == 2 || numeroEntrada == 0)
                 {
                     Console.WriteLine($"O número {numeroEntrada} é primo!");
                 }
