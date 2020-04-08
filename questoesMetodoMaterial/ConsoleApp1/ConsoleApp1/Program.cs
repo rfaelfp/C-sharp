@@ -40,6 +40,10 @@ namespace ConsoleApp1
                 printVetorMeioInicio(meuVetorEntrada);
                 printVetorMeioFim(meuVetorEntrada);
             }
+            if (numeroQuestao == 4)
+            {
+
+            }
         }
         static void numeroParImpar(int numeroSaida)
         {
@@ -100,12 +104,10 @@ namespace ConsoleApp1
         static void getVetor (int[] meuArray)
         {
             int[] meuVetor = new int[10];
-            int i;
-            for (i = 0; i < meuVetor.Length; i++)
+            for (int i = 0; i < meuArray.Length; i++)
             {
                 Console.Write("Digite os valores para serem inserido no vetor: ");
-                meuVetor[i] = Convert.ToInt32(Console.ReadLine());
-                meuArray[i] = meuVetor[i];
+                meuArray[i] = Convert.ToInt32(Console.ReadLine());
             }
         }
         static void printVetor(int[] meuArray)
