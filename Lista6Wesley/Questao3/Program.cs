@@ -6,44 +6,48 @@ namespace Questao3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Questão III da lista VI.");
-            int tamanhoArray, i, j;
+            int tamanhoArray;
             Console.Write("Digite o tamanho da matriz quadrada: ");
             tamanhoArray = Convert.ToInt32(Console.ReadLine());
             int[,] meuArray = new int[tamanhoArray, tamanhoArray];
             int[] diagonalPrincial = new int[tamanhoArray];
             int[] diagonalSecundaria = new int[tamanhoArray];
-            for (i = 0; i < tamanhoArray; i++)
-            {
-                Console.WriteLine();
-                for (j = 0; j < tamanhoArray; j++)
-                {
-                    meuArray[i, j] = getAleatorio();
-                    Console.Write(meuArray[i, j] + "\t");
-                }
-            }
+
+            meuArray = getAleatorio(meuArray, tamanhoArray);
+
+            printMeuArray(meuArray, tamanhoArray);
             Console.WriteLine();
 
             diagonalPrincial = getDiagonalPrincial(meuArray, tamanhoArray, diagonalPrincial);
             Console.Write("Linha diagonal principal: ");
-            foreach (int e in diagonalPrincial)
-            {
-                Console.Write(e + "\t");
-            }
+            printDiagonal(diagonalPrincial);
 
             Console.WriteLine();
             diagonalSecundaria = getDiagonalSecundaria(meuArray, tamanhoArray, diagonalSecundaria);
-            Console.Write("Linha diagonal principal: ");
-            foreach (int e in diagonalSecundaria)
-            {
-                Console.Write(e + "\t");
-            }
+            Console.Write("Linha diagonal secundária: ");
+            printDiagonal(diagonalSecundaria);
+
+            Console.WriteLine();
+            Console.WriteLine();
         }
-        static int getAleatorio()
+        static int[,] getAleatorio(int[,] meuArray, int tamanhoArray)
         {
+            int i, j; 
             Random numeroAleatorio = new Random();
-            int retorno = numeroAleatorio.Next(0, 1000);
-            return retorno;
+            for (i = 0; i < tamanhoArray; i++)
+                for (j = 0; j < tamanhoArray; j++)
+                    meuArray[i, j] = numeroAleatorio.Next(0, 1000);
+            return meuArray;
+        }
+        static void printMeuArray(int[,] meuArray, int tamanhoArray)
+        {
+            int i, j;
+            for (i = 0; i < tamanhoArray; i++)
+            {
+                Console.WriteLine();
+                for (j = 0; j < tamanhoArray; j++)
+                    Console.Write(meuArray[i, j] + "\t");
+            }
         }
         static int[] getDiagonalPrincial(int[,] meuArray, int tamanhoArray, int[] diagonalPrincialParam)
         {
@@ -65,6 +69,13 @@ namespace Questao3
                 k++;
             }
             return diagonalSecundariaParam;
+        }
+        static void printDiagonal(int[] diagonal)
+        {
+            foreach(int e in diagonal)
+            {
+                Console.Write(e + "\t");
+            }
         }
     }
 }
