@@ -6,10 +6,10 @@ namespace Questao2
     {
         static void Main(string[] args)
         {
-            string url; 
-            url = getUrl();
+            string url = getUrl();
 
-            getProtocolo(url);
+            Console.Write(getProtocolo(url));
+            Console.WriteLine(getEndereco(url);
         }
         static string getUrl()
         {
@@ -18,15 +18,14 @@ namespace Questao2
             url = Convert.ToString(Console.ReadLine());
             return url;
         }
-        static void getProtocolo(string url)
+        static string getProtocolo(string url)
         {
-            if (url.Substring(0, 5) == "https")
-            Console.Write(url.Substring(0, 8));
-            else
-            {
-                Console.Write(url.Substring(0, 7));
-            }
-            
+            url = url.Substring(0, 5) == "https" ? url.Substring(0, 8) : url.Substring(0, 7);
+            return url;
         }   
+        static string getEndereco(string url)
+        {
+
+        }
     }
 }
