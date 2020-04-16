@@ -6,23 +6,27 @@ namespace Questao2
     {
         static void Main(string[] args)
         {
+            string url; 
+            url = getUrl();
+
+            getProtocolo(url);
+        }
+        static string getUrl()
+        {
             string url;
-            string[] protocolo;
             Console.Write("Digite a url desejada: ");
             url = Convert.ToString(Console.ReadLine());
-            protocolo = getProtocolo(url);
-            //Console.WriteLine(protocolo);
+            return url;
         }
-        static string[] getProtocolo(string urlRet)
+        static void getProtocolo(string url)
         {
-            int i;
-            string[] retorno = new string[6];
-            for (i = 0; i < 6; i++)
-                retorno[i] += urlRet[i];
-            Console.WriteLine(retorno);
-            return retorno;
-        }
-
-
+            if (url.Substring(0, 5) == "https")
+            Console.Write(url.Substring(0, 8));
+            else
+            {
+                Console.Write(url.Substring(0, 7));
+            }
+            
+        }   
     }
 }
