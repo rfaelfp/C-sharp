@@ -28,7 +28,7 @@ namespace Questao6
                     mat1[i, j] = numRan.Next(0, 10);
             return mat1;
         }
-        static void printMat(int[,]mat1)
+        static void printMat(int[,] mat1)
         {
             int i, j;
             for (i = 0; i < mat1.GetLength(0); i++)
@@ -41,26 +41,10 @@ namespace Questao6
         }
         static int[,] modificaMat(int[,] mat1, int[,] mat2)
         {
-            int i, j, soma = 0, contador = 0;
+            int i, j, soma = 0;
             for (i = 0; i < mat1.GetLength(0); i++)
-            {
-                int reserva = -1;
                 for (j = 0; j < mat1.GetLength(0); j++)
-                {
-                soma += mat1[i, j] * mat2[j, i];
-                    contador++;
-                    if (contador == 1)
-                    {
-                        reserva++;
-                    }
-                    if (contador == mat1.GetLength(0))
-                    {
-                        mat1[i, reserva] = soma;
-                        soma = 0;
-                        contador = 0;
-                    }
-                }
-            }
+                    soma += mat1[i, j] * mat2[j, i];
             return mat1;
         }
     }
