@@ -79,9 +79,9 @@ class Program
         int i, j;
         char cidade1, cidade2;
         string cidades = "abcd";        
-        Console.Write("Digite a primeira cidade: ");
+        Console.Write("Digite a origem: ");
         cidade1 = Convert.ToChar(Console.ReadLine());
-        Console.Write("Digite a segunda cidade: ");
+        Console.Write("Digite o destino: ");
         cidade2 = Convert.ToChar(Console.ReadLine());
 
         for (i = 0; cidades[i] != cidade1; i++);
