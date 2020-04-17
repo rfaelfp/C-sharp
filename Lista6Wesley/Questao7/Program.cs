@@ -9,7 +9,12 @@ class Program
 
         int[,] matriz = new int[4, 4];
         preencherMatriz(matriz);
+        qtdEstradas(matriz);
         printMatriz(matriz);
+        while(true)
+        {
+        Console.WriteLine(retornaDistancia(matriz));
+        }
     }
     static int[,] preencherMatriz(int[,] matriz)
     {
@@ -42,5 +47,54 @@ class Program
             for (j = 0; j < matriz.GetLength(0); j++)
                 Console.Write(matriz[i, j] + "\t");
         }
+        Console.WriteLine();
+    }
+    static void qtdEstradas(int[,] matriz)
+    {
+        int i, j, contA = 0, contB = 0, contC = 0, contD = 0;
+        for (i = 0; i < matriz.GetLength(0); i++)
+            for (j = 0; j < matriz.GetLength(0); j++)
+            {
+                if (matriz[i, j] != 0)
+                {
+                    if (i == 0)
+                        contA++;
+                    else if (i == 1)
+                        contB++;
+                    else if (i == 2)
+                        contC++;
+                    else
+                    {
+                        contD++;
+                    }
+                }
+            }
+        Console.WriteLine($"A cidade A é ligada por {contA} estradas.");
+        Console.WriteLine($"A cidade B é ligada por {contB} estradas.");
+        Console.WriteLine($"A cidade C é ligada por {contC} estradas.");
+        Console.WriteLine($"A cidade D é ligada por {contD} estradas.");
+    }
+    static int retornaDistancia(int[,] matriz)
+    {
+        int i, j;
+        char cidade1, cidade2;
+        string cidades = "abcd";        
+        Console.Write("Digite a primeira cidade: ");
+        cidade1 = Convert.ToChar(Console.ReadLine());
+        Console.Write("Digite a segunda cidade: ");
+        cidade2 = Convert.ToChar(Console.ReadLine());
+
+        for (i = 0; cidades[i] != cidade1; i++);
+        for (j = 0; cidades[j] != cidade2; j++);
+        if (matriz[i, j] == 0)
+        {
+            Console.WriteLine($"Da cidade {cidade1} para {cidade2} há {matriz[i, j]} estradas.");
+            return matriz[i, j];
+        }
+        else
+        {
+        return matriz[i, j];
+        }
+
     }
 }
