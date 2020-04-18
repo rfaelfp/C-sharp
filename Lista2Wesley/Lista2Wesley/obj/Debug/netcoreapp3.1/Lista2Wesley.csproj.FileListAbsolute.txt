@@ -9,3 +9,5 @@ C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcore
 C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcoreapp3.1\Lista2Wesley.AssemblyInfo.cs
 C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcoreapp3.1\Lista2Wesley.dll
 C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcoreapp3.1\Lista2Wesley.pdb
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcoreapp3.1\Lista2Wesley.csproj.CoreCompileInputs.cache
+C:\Users\rafael.pedrosa\Documents\C#\Lista2Wesley\Lista2Wesley\obj\Debug\netcoreapp3.1\Lista2Wesley.genruntimeconfig.cache
