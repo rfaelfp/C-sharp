@@ -41,11 +41,17 @@ namespace Questao6
         }
         static int[,] modificaMat(int[,] mat1, int[,] mat2)
         {
-            int i, j, soma = 0;
+            int i, j, k;
+            int[,] mat3 = new int[mat1.GetLength(0), mat1.GetLength(0)];
+            for (k = 0; k < mat3.GetLength(0); k++)
+                for (i = 0; i < mat3.GetLength(0); i++)
+                    mat3[k, k] = 0;
+
             for (i = 0; i < mat1.GetLength(0); i++)
                 for (j = 0; j < mat1.GetLength(0); j++)
-                    soma += mat1[i, j] * mat2[j, i];
-            return mat1;
+                    for (k = 0; k < mat1.GetLength(0); k++)
+                        mat3[i, j] += mat1[i, k] * mat2[k, j];
+            return mat3;
         }
     }
 }
