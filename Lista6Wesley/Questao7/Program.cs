@@ -8,12 +8,18 @@ class Program
 
 
         int[,] matriz = new int[4, 4];
+        int result;
         preencherMatriz(matriz);
         qtdEstradas(matriz);
         printMatriz(matriz);
-        while(true)
+        while (true)
         {
-        Console.WriteLine(retornaDistancia(matriz));
+            result = retornaDistancia(matriz);
+            if (result != 0)
+                Console.WriteLine($"A distância entre as cidades é {result} quilometros.");
+            else
+                Console.WriteLine($"Não há estradas entre as cidades");
+
         }
     }
     static int[,] preencherMatriz(int[,] matriz)
@@ -38,7 +44,7 @@ class Program
             }
         return matriz;
     }
-    static void printMatriz(int [,] matriz)
+    static void printMatriz(int[,] matriz)
     {
         int i, j;
         for (i = 0; i < matriz.GetLength(0); i++)
@@ -78,23 +84,15 @@ class Program
     {
         int i, j;
         char cidade1, cidade2;
-        string cidades = "abcd";        
+        string cidades = "abcd";
         Console.Write("Digite a origem: ");
         cidade1 = Convert.ToChar(Console.ReadLine());
         Console.Write("Digite o destino: ");
         cidade2 = Convert.ToChar(Console.ReadLine());
 
-        for (i = 0; cidades[i] != cidade1; i++);
-        for (j = 0; cidades[j] != cidade2; j++);
-        if (matriz[i, j] == 0)
-        {
-            Console.WriteLine($"Da cidade {cidade1} para {cidade2} há {matriz[i, j]} estradas.");
-            return matriz[i, j];
-        }
-        else
-        {
-        return matriz[i, j];
-        }
 
+        for (i = 0; cidades[i] != cidade1; i++) ;
+        for (j = 0; cidades[j] != cidade2; j++) ;
+        return matriz[i, j];
     }
 }
