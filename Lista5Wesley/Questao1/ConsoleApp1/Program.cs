@@ -7,27 +7,32 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            bool verificacao = true;
-            while (verificacao == true)
+            while (true)
             {
-                inverterNumero();
-                Console.WriteLine();
+                int numero = getNumero();
+                Console.WriteLine(inverterNumero(numero));
             }
 
 
         }
-        static void inverterNumero ()
+        static string inverterNumero (int numero)
         {
-            int numero, i;
-            string numeroConvertido;
-            Console.Write("Digite um número para que ele seja invertido: ");
-            numero = Convert.ToInt32(Console.ReadLine());
+            int i;
+            string numeroConvertido, numeroResult = "";
             Console.Write("O número invertido é: ");
             numeroConvertido = numero.ToString();
             for (i = numeroConvertido.Length - 1; i >= 0; i--)
             {
-                Console.Write(numeroConvertido[i]);
+                numeroResult += numeroConvertido[i];
             }
+            return numeroResult;
+        }
+        static int getNumero()
+        {
+            int numero;
+            Console.Write("Digite um número para que ele seja invertido: ");
+            numero = Convert.ToInt32(Console.ReadLine());
+            return numero;
         }
     }
 }

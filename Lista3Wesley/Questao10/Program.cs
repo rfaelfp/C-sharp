@@ -6,7 +6,12 @@ namespace Questao10
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int fator = 0, numero, teste, i;
+            Console.WriteLine("Informe o número: ");
+            numero = Convert.ToInt32(Console.ReadLine());
+
+            teste = fator * (fator + 1) * (fator + 2);
+            for(i = 0; i < numero; i++)
         }
     }
 }
