@@ -1,17 +1,13 @@
 ﻿using System;
-
-namespace Questao1
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            int num;
-            Console.Write("Digite o número: ");
-            num = Convert.ToInt32(Console.ReadLine());
+        int num;
+        Console.Write("Digite o número: ");
+        num = Convert.ToInt32(Console.ReadLine());
 
-            if (num % 2 == 0)
-                Console.Write($"O número {num} é par!");
-        }
+        if (num % 2 == 0)
+            Console.Write($"O número {num} é par!");
     }
 }

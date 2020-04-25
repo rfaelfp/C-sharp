@@ -32,9 +32,7 @@ class Program
             for (j = 0; j < matriz.GetLength(0); j++)
             {
                 if (i == j)
-                {
                     matriz[i, j] = 0;
-                }
                 else
                 {
                     Console.Write($"Digite as distância entre a cidade {cidade1.Substring(i, 1)} e a {cidades2.Substring(controleCidade, 1)}: ");

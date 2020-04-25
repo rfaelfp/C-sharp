@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\questoesMaterial4\\Questao1\\Questao1.csproj",
+      "projectUniqueName": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\questoesMaterial4\\Questao1.csproj",
       "projectName": "Questao1",
-      "projectPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\questoesMaterial4\\Questao1\\Questao1.csproj",
+      "projectPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\questoesMaterial4\\Questao1.csproj",
       "packagesPath": "C:\\Users\\rafael.pedrosa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\questoesMaterial4\\Questao1\\obj\\",
+      "outputPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\questoesMaterial4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rafael.pedrosa\\AppData\\Roaming\\NuGet\\NuGet.Config",

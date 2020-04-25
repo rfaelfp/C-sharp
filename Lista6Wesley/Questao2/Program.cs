@@ -46,13 +46,13 @@ class Program
     static string getPagina(string url)
     {
         int i;
-        for (i = url.Length - 1; url[i] != '/'; i--) ;
+        for (i = url.Length - 1; url[i] != '/'; i--);
         return url.Substring(i);
     }
     static string getExtensao(string url)
     {
         int i;
-        for (i = url.Length - 1; url[i] != '.'; i--) ;
+        for (i = url.Length - 1; url[i] != '.'; i--);
         return url.Substring(i);
     }
 }
