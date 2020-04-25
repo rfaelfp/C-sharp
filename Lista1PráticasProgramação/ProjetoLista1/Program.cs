@@ -274,7 +274,7 @@ namespace ProjetoLista1
 				precoConvite = Convert.ToDouble(Console.ReadLine());
 				qtdConvites = custoTeatroTotal / precoConvite;
 				qtdConvites = Math.Ceiling(qtdConvites);
-				Console.WriteLine($"É necessário vender {qtdConvites} para pagar o custo do teatro.");
+				Console.WriteLine($"É necessário vender {qtdConvites} convites para pagar o custo do teatro.");
 			}
 			else if (exercicioEscolha == 17)
 
