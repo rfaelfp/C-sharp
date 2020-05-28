@@ -1,0 +1,10 @@
+C:\Users\rafael.pedrosa\Documents\ProjetoLuiz\ferias\bin\Debug\ferias.exe.config
+C:\Users\rafael.pedrosa\Documents\ProjetoLuiz\ferias\bin\Debug\ferias.exe
+C:\Users\rafael.pedrosa\Documents\ProjetoLuiz\ferias\bin\Debug\ferias.pdb
+C:\Users\rafael.pedrosa\Documents\ProjetoLuiz\ferias\obj\Debug\ferias.csprojAssemblyReference.cache
+C:\Users\rafael.pedrosa\Documents\ProjetoLuiz\ferias\obj\Debug\ferias.Form1.resources
+C:\Users\rafael.pedrosa\Documents\ProjetoLuiz\ferias\obj\Debug\ferias.Properties.Resources.resources
+C:\Users\rafael.pedrosa\Documents\ProjetoLuiz\ferias\obj\Debug\ferias.csproj.GenerateResource.cache
+C:\Users\rafael.pedrosa\Documents\ProjetoLuiz\ferias\obj\Debug\ferias.csproj.CoreCompileInputs.cache
+C:\Users\rafael.pedrosa\Documents\ProjetoLuiz\ferias\obj\Debug\ferias.exe
+C:\Users\rafael.pedrosa\Documents\ProjetoLuiz\ferias\obj\Debug\ferias.pdb

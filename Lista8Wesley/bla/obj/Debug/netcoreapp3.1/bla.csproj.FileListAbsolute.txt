@@ -1,0 +1,13 @@
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\bin\Debug\netcoreapp3.1\bla.exe
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\bin\Debug\netcoreapp3.1\bla.deps.json
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\bin\Debug\netcoreapp3.1\bla.runtimeconfig.json
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\bin\Debug\netcoreapp3.1\bla.runtimeconfig.dev.json
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\bin\Debug\netcoreapp3.1\bla.dll
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\bin\Debug\netcoreapp3.1\bla.pdb
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\obj\Debug\netcoreapp3.1\bla.csprojAssemblyReference.cache
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\obj\Debug\netcoreapp3.1\bla.csproj.CoreCompileInputs.cache
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\obj\Debug\netcoreapp3.1\bla.AssemblyInfoInputs.cache
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\obj\Debug\netcoreapp3.1\bla.AssemblyInfo.cs
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\obj\Debug\netcoreapp3.1\bla.dll
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\obj\Debug\netcoreapp3.1\bla.pdb
+C:\Users\rafael.pedrosa\Documents\C#\Lista8Wesley\bla\obj\Debug\netcoreapp3.1\bla.genruntimeconfig.cache
