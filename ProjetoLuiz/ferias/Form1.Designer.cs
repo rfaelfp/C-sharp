@@ -39,14 +39,8 @@
             this.credBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataFimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaFeriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.feriasDataSet = new ferias.FeriasDataSet();
-            this.marcaFeriasTableAdapter = new ferias.FeriasDataSetTableAdapters.MarcaFeriasTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,6 +49,13 @@
             this.txtFeminino = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.marcaFeriasTableAdapter = new ferias.FeriasDataSetTableAdapters.MarcaFeriasTableAdapter();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataFimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.credBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaFeriasBindingSource)).BeginInit();
@@ -137,7 +138,8 @@
             this.cpfDataGridViewTextBoxColumn,
             this.sexoDataGridViewTextBoxColumn,
             this.dataInicioDataGridViewTextBoxColumn,
-            this.dataFimDataGridViewTextBoxColumn});
+            this.dataFimDataGridViewTextBoxColumn,
+            this.id});
             this.dataGridView.DataSource = this.marcaFeriasBindingSource;
             this.dataGridView.Location = new System.Drawing.Point(8, 212);
             this.dataGridView.Name = "dataGridView";
@@ -145,41 +147,6 @@
             this.dataGridView.Size = new System.Drawing.Size(543, 235);
             this.dataGridView.TabIndex = 9;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cpfDataGridViewTextBoxColumn
-            // 
-            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
-            this.cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
-            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
-            this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sexoDataGridViewTextBoxColumn
-            // 
-            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "sexo";
-            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
-            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataInicioDataGridViewTextBoxColumn
-            // 
-            this.dataInicioDataGridViewTextBoxColumn.DataPropertyName = "dataInicio";
-            this.dataInicioDataGridViewTextBoxColumn.HeaderText = "Data de Início";
-            this.dataInicioDataGridViewTextBoxColumn.Name = "dataInicioDataGridViewTextBoxColumn";
-            this.dataInicioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataFimDataGridViewTextBoxColumn
-            // 
-            this.dataFimDataGridViewTextBoxColumn.DataPropertyName = "dataFim";
-            this.dataFimDataGridViewTextBoxColumn.HeaderText = "Data de Fim";
-            this.dataFimDataGridViewTextBoxColumn.Name = "dataFimDataGridViewTextBoxColumn";
-            this.dataFimDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // marcaFeriasBindingSource
             // 
@@ -190,10 +157,6 @@
             // 
             this.feriasDataSet.DataSetName = "FeriasDataSet";
             this.feriasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // marcaFeriasTableAdapter
-            // 
-            this.marcaFeriasTableAdapter.ClearBeforeFill = true;
             // 
             // label2
             // 
@@ -274,11 +237,57 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.excluir_Click);
             // 
+            // marcaFeriasTableAdapter
+            // 
+            this.marcaFeriasTableAdapter.ClearBeforeFill = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cpfDataGridViewTextBoxColumn
+            // 
+            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
+            this.cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
+            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
+            this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sexoDataGridViewTextBoxColumn
+            // 
+            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "sexo";
+            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataInicioDataGridViewTextBoxColumn
+            // 
+            this.dataInicioDataGridViewTextBoxColumn.DataPropertyName = "dataInicio";
+            this.dataInicioDataGridViewTextBoxColumn.HeaderText = "Data de Início";
+            this.dataInicioDataGridViewTextBoxColumn.Name = "dataInicioDataGridViewTextBoxColumn";
+            this.dataInicioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataFimDataGridViewTextBoxColumn
+            // 
+            this.dataFimDataGridViewTextBoxColumn.DataPropertyName = "dataFim";
+            this.dataFimDataGridViewTextBoxColumn.HeaderText = "Data de Fim";
+            this.dataFimDataGridViewTextBoxColumn.Name = "dataFimDataGridViewTextBoxColumn";
+            this.dataFimDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 454);
+            this.ClientSize = new System.Drawing.Size(571, 467);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtFeminino);
@@ -329,12 +338,13 @@
         private System.Windows.Forms.RadioButton txtMasculino;
         private System.Windows.Forms.RadioButton txtFeminino;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpfDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInicioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFimDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }
 

@@ -77,7 +77,16 @@ SELECT id, nome, cpf, dataInicio, dataFim, sexo FROM MarcaFerias WHERE (id = @id
               <Mapping SourceColumn="dataFim" DataSetColumn="dataFim" />
               <Mapping SourceColumn="sexo" DataSetColumn="sexo" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="FeriasConnectionString (Settings)" DbObjectName="Ferias.dbo.MarcaFerias" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, nome, cpf, dataInicio, dataFim, sexo FROM dbo.MarcaFerias</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -87,7 +96,7 @@ SELECT id, nome, cpf, dataInicio, dataFim, sexo FROM MarcaFerias WHERE (id = @id
   <xs:element name="FeriasDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FeriasDataSet" msprop:Generator_UserDSName="FeriasDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MarcaFerias" msprop:Generator_TableClassName="MarcaFeriasDataTable" msprop:Generator_TableVarName="tableMarcaFerias" msprop:Generator_TablePropName="MarcaFerias" msprop:Generator_RowDeletingName="MarcaFeriasRowDeleting" msprop:Generator_RowChangingName="MarcaFeriasRowChanging" msprop:Generator_RowEvHandlerName="MarcaFeriasRowChangeEventHandler" msprop:Generator_RowDeletedName="MarcaFeriasRowDeleted" msprop:Generator_UserTableName="MarcaFerias" msprop:Generator_RowChangedName="MarcaFeriasRowChanged" msprop:Generator_RowEvArgName="MarcaFeriasRowChangeEvent" msprop:Generator_RowClassName="MarcaFeriasRow">
+        <xs:element name="MarcaFerias" msprop:Generator_TableClassName="MarcaFeriasDataTable" msprop:Generator_TableVarName="tableMarcaFerias" msprop:Generator_RowChangedName="MarcaFeriasRowChanged" msprop:Generator_TablePropName="MarcaFerias" msprop:Generator_RowDeletingName="MarcaFeriasRowDeleting" msprop:Generator_RowChangingName="MarcaFeriasRowChanging" msprop:Generator_RowEvHandlerName="MarcaFeriasRowChangeEventHandler" msprop:Generator_RowDeletedName="MarcaFeriasRowDeleted" msprop:Generator_RowClassName="MarcaFeriasRow" msprop:Generator_UserTableName="MarcaFerias" msprop:Generator_RowEvArgName="MarcaFeriasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id">

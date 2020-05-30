@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Reflection.Emit;
+using System.Net.Configuration;
 using System.Windows.Forms;
 
 namespace ferias
@@ -115,14 +115,50 @@ namespace ferias
 
         private void excluir_Click(object sender, EventArgs e)
         {
-            // Criando string de conexão.
-            SqlConnection conn = new SqlConnection("Data Source=localhost;Persist Security Info=True;Initial Catalog=Ferias; User ID=sa;Password=167421es");
+            string confirmacao;
+            confirmacao = "Tem certeza que deseja excluir o registro?";
 
-            // Declarando variável de string com o comando SQL de update.
-            string SQL = "delete MarcaFerias where id =  ";
+            MessageBox.Show(confirmacao, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (MessageBoxButtons.YesNo(4) == true )
+                
+            // Consultando o valor do id do data grid view para passar como parâmetro.
+            if (dataGridView.Rows.Count > 0)
+            {
+                int selectedrowindex = dataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView.Rows[selectedrowindex];
+                string valorId = Convert.ToString(selectedRow.Cells["id"].Value);
 
-            // Instanciando a conexão passando a string de conexão e a string de insert
-            SqlCommand c = new SqlCommand(SQL, conn);
+                // Criando string de conexão.
+                SqlConnection conn = new SqlConnection("Data Source=localhost;Persist Security Info=True;Initial Catalog=Ferias; User ID=sa;Password=167421es");
+
+                // Declarando variável de string com o comando SQL de update.
+                string SQL = $"delete MarcaFerias where id = {valorId}";
+
+                // Instanciando a conexão passando a string de conexão e a string de insert
+                SqlCommand c = new SqlCommand(SQL, conn);
+                try
+                {
+                    // Abertura de conexão, execução do delete e atualização do data grid view;
+                    conn.Open();
+                    c.ExecuteNonQuery();
+                    conn.Close();
+                    this.marcaFeriasTableAdapter.Fill(this.feriasDataSet.MarcaFerias);
+                }
+                catch (SqlException ex)
+                {
+                    // Mostra o erro de exceção que seja relacionado ao banco de dados.
+                    string msg;
+                    msg = "Erro: " + ex.Message;
+                    MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não há registro selecionado!");
+            }
+
+
+
 
         }
     }
