@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace ferias
@@ -24,7 +25,6 @@ namespace ferias
 
             // TODO: esta linha de código carrega dados na tabela 'feriasDataSet.MarcaFerias'. Você pode movê-la ou removê-la conforme necessário.
             this.marcaFeriasTableAdapter.Fill(this.feriasDataSet.MarcaFerias);
-            // TODO: esta linha de código carrega dados na tabela 'credenciaisDataSet.cred'. Você pode movê-la ou removê-la conforme necessário.
 
         }
 
@@ -33,8 +33,18 @@ namespace ferias
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void limparCampos_Click(object sender, EventArgs e)
         {
+            // Atribui novos valores para os objetos fazendo com que seja iniciado como "limpos".
+            txtNome.Text = "";
+            txtcpf.Text = "";
+            txtDataInicio.Text = System.DateTime.Now.ToShortDateString();
+            txtDataFim.Text = System.DateTime.Now.ToShortDateString();
+            if (txtFeminino.Checked)
+            {
+                txtFeminino.Checked = false;
+                txtMasculino.Checked = true;
+            }
 
         }
 
@@ -50,29 +60,42 @@ namespace ferias
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            // Criando string de conexão.
             SqlConnection conn = new SqlConnection("Data Source=localhost;Persist Security Info=True;Initial Catalog=Ferias; User ID=sa;Password=167421es");
 
+            // Declarando variável de string com o comando SQL de update.
             string SQL = "INSERT INTO MarcaFerias (Nome, Cpf, DataInicio, DataFim, sexo) values(@nome, @cpf, @datainicio, @datafim, @sexo)";
 
+            // Instanciando a conexão passando a string de conexão e a string de insert
             SqlCommand c = new SqlCommand(SQL, conn);
 
             c.Parameters.AddWithValue("@nome", txtNome.Text);
             c.Parameters.AddWithValue("@cpf", txtcpf.Text);
             c.Parameters.AddWithValue("@datainicio", txtDataInicio.Text);
             c.Parameters.AddWithValue("@datafim", txtDataFim.Text);
-            c.Parameters.AddWithValue("@sexo", 'M');
+            // Verificação do radio button para definir o valor passado para o banco (sexo).
+            if (txtMasculino.Checked)
+                c.Parameters.AddWithValue("@sexo", 'M');
+            else
+            {
+                c.Parameters.AddWithValue("@sexo", 'F');
+            }
 
             try
             {
+                // Realizando abertura de conexão com o banco de dados, executando a query e fechando a conexão, ao final retorno de mensagem para o usuário.
                 conn.Open();
                 c.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("SUCESSO!!", "Sucesso");
+                MessageBox.Show("Inclusão realizada!", "Sucesso");
+                // Carrega o DataGridView atualizando o grid com a inclusão realizada.
+                this.marcaFeriasTableAdapter.Fill(this.feriasDataSet.MarcaFerias);
             }
             catch (SqlException ex)
             {
                 string msg;
 
+                // Tratamento de constrain retornando mensagem mais agradável para usuário.
                 if (ex.Message.Contains("UQ__MarcaFer"))
                     msg = "Já existe um funcionário cadastrado com esse CPF";
                 else if (ex.Message.Contains("un_nome"))
@@ -85,9 +108,21 @@ namespace ferias
                 MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void excluir_Click(object sender, EventArgs e)
+        {
+            // Criando string de conexão.
+            SqlConnection conn = new SqlConnection("Data Source=localhost;Persist Security Info=True;Initial Catalog=Ferias; User ID=sa;Password=167421es");
+
+            // Declarando variável de string com o comando SQL de update.
+            string SQL = "delete MarcaFerias where id =  ";
+
+            // Instanciando a conexão passando a string de conexão e a string de insert
+            SqlCommand c = new SqlCommand(SQL, conn);
 
         }
     }

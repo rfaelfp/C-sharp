@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtDataInicio = new System.Windows.Forms.DateTimePicker();
             this.txtDataFim = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
@@ -98,7 +99,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Limpar";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.limparCampos_Click);
             // 
             // txtNome
             // 
@@ -128,6 +129,7 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -139,6 +141,7 @@
             this.dataGridView.DataSource = this.marcaFeriasBindingSource;
             this.dataGridView.Location = new System.Drawing.Point(8, 212);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(543, 235);
             this.dataGridView.TabIndex = 9;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -148,30 +151,35 @@
             this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cpfDataGridViewTextBoxColumn
             // 
             this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
             this.cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
             this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
+            this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sexoDataGridViewTextBoxColumn
             // 
             this.sexoDataGridViewTextBoxColumn.DataPropertyName = "sexo";
             this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
             this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataInicioDataGridViewTextBoxColumn
             // 
             this.dataInicioDataGridViewTextBoxColumn.DataPropertyName = "dataInicio";
             this.dataInicioDataGridViewTextBoxColumn.HeaderText = "Data de Início";
             this.dataInicioDataGridViewTextBoxColumn.Name = "dataInicioDataGridViewTextBoxColumn";
+            this.dataInicioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataFimDataGridViewTextBoxColumn
             // 
             this.dataFimDataGridViewTextBoxColumn.DataPropertyName = "dataFim";
             this.dataFimDataGridViewTextBoxColumn.HeaderText = "Data de Fim";
             this.dataFimDataGridViewTextBoxColumn.Name = "dataFimDataGridViewTextBoxColumn";
+            this.dataFimDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // marcaFeriasBindingSource
             // 
@@ -264,6 +272,7 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "Excluir Reg.";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.excluir_Click);
             // 
             // Form1
             // 
@@ -285,6 +294,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDataFim);
             this.Controls.Add(this.txtDataInicio);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ImeMode = System.Windows.Forms.ImeMode.Alpha;
             this.Name = "Form1";
             this.Text = "Férias";
             this.Load += new System.EventHandler(this.Form1_Load);
