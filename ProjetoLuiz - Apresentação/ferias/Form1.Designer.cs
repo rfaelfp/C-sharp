@@ -49,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtcpf1 = new System.Windows.Forms.TextBox();
             this.txtMasculino = new System.Windows.Forms.RadioButton();
             this.txtFeminino = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,6 +56,9 @@
             this.marcaFeriasTableAdapter = new ferias.FeriasDataSetTableAdapters.MarcaFeriasTableAdapter();
             this.credBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtcpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtDezDias = new System.Windows.Forms.RadioButton();
+            this.txtQuinzeDias = new System.Windows.Forms.RadioButton();
+            this.txtTrintaDias = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaFeriasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feriasDataSet)).BeginInit();
@@ -223,14 +225,6 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "CPF";
             // 
-            // txtcpf1
-            // 
-            this.txtcpf1.Location = new System.Drawing.Point(332, 62);
-            this.txtcpf1.MaxLength = 11;
-            this.txtcpf1.Name = "txtcpf1";
-            this.txtcpf1.Size = new System.Drawing.Size(100, 20);
-            this.txtcpf1.TabIndex = 1;
-            // 
             // txtMasculino
             // 
             this.txtMasculino.AutoSize = true;
@@ -239,7 +233,6 @@
             this.txtMasculino.Name = "txtMasculino";
             this.txtMasculino.Size = new System.Drawing.Size(73, 17);
             this.txtMasculino.TabIndex = 2;
-            this.txtMasculino.TabStop = true;
             this.txtMasculino.Text = "Masculino";
             this.txtMasculino.UseVisualStyleBackColor = true;
             // 
@@ -250,7 +243,6 @@
             this.txtFeminino.Name = "txtFeminino";
             this.txtFeminino.Size = new System.Drawing.Size(67, 17);
             this.txtFeminino.TabIndex = 3;
-            this.txtFeminino.TabStop = true;
             this.txtFeminino.Text = "Feminino";
             this.txtFeminino.UseVisualStyleBackColor = true;
             // 
@@ -283,24 +275,58 @@
             // 
             // txtcpf
             // 
-            this.txtcpf.Location = new System.Drawing.Point(8, 62);
+            this.txtcpf.Location = new System.Drawing.Point(11, 62);
             this.txtcpf.Mask = "000.000.000-00";
             this.txtcpf.Name = "txtcpf";
-            this.txtcpf.Size = new System.Drawing.Size(100, 20);
-            this.txtcpf.TabIndex = 25;
-            this.txtcpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtcpf_MaskInputRejected);
+            this.txtcpf.Size = new System.Drawing.Size(87, 20);
+            this.txtcpf.TabIndex = 1;
+            // 
+            // txtDezDias
+            // 
+            this.txtDezDias.AutoSize = true;
+            this.txtDezDias.Location = new System.Drawing.Point(332, 109);
+            this.txtDezDias.Name = "txtDezDias";
+            this.txtDezDias.Size = new System.Drawing.Size(59, 17);
+            this.txtDezDias.TabIndex = 26;
+            this.txtDezDias.Text = "10 dias";
+            this.txtDezDias.UseVisualStyleBackColor = true;
+            this.txtDezDias.CheckedChanged += new System.EventHandler(this.atualizaDezDias);
+            // 
+            // txtQuinzeDias
+            // 
+            this.txtQuinzeDias.AutoSize = true;
+            this.txtQuinzeDias.Location = new System.Drawing.Point(397, 109);
+            this.txtQuinzeDias.Name = "txtQuinzeDias";
+            this.txtQuinzeDias.Size = new System.Drawing.Size(59, 17);
+            this.txtQuinzeDias.TabIndex = 27;
+            this.txtQuinzeDias.Text = "15 dias";
+            this.txtQuinzeDias.UseVisualStyleBackColor = true;
+            this.txtQuinzeDias.CheckedChanged += new System.EventHandler(this.atualizaQuinzeDias);
+            // 
+            // txtTrintaDias
+            // 
+            this.txtTrintaDias.AutoSize = true;
+            this.txtTrintaDias.Location = new System.Drawing.Point(462, 109);
+            this.txtTrintaDias.Name = "txtTrintaDias";
+            this.txtTrintaDias.Size = new System.Drawing.Size(59, 17);
+            this.txtTrintaDias.TabIndex = 28;
+            this.txtTrintaDias.Text = "30 dias";
+            this.txtTrintaDias.UseVisualStyleBackColor = true;
+            this.txtTrintaDias.CheckedChanged += new System.EventHandler(this.atualizaTrintaDias);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 473);
+            this.Controls.Add(this.txtTrintaDias);
+            this.Controls.Add(this.txtQuinzeDias);
+            this.Controls.Add(this.txtDezDias);
             this.Controls.Add(this.txtcpf);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtFeminino);
             this.Controls.Add(this.txtMasculino);
-            this.Controls.Add(this.txtcpf1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -342,7 +368,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtcpf1;
         private System.Windows.Forms.RadioButton txtMasculino;
         private System.Windows.Forms.RadioButton txtFeminino;
         private System.Windows.Forms.Label label5;
@@ -354,6 +379,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFimDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.MaskedTextBox txtcpf;
+        private System.Windows.Forms.RadioButton txtDezDias;
+        private System.Windows.Forms.RadioButton txtQuinzeDias;
+        private System.Windows.Forms.RadioButton txtTrintaDias;
     }
 }
 
