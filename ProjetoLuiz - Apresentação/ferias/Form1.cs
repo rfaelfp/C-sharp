@@ -15,21 +15,12 @@ namespace ferias
             MaximizeBox = false;
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
             // TODO: esta linha de código carrega dados na tabela 'feriasDataSet.MarcaFerias'. Você pode movê-la ou removê-la conforme necessário.
             this.marcaFeriasTableAdapter.Fill(this.feriasDataSet.MarcaFerias);
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -47,17 +38,8 @@ namespace ferias
             }
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void inclusao(object sender, EventArgs e)
         {
             // Criando string de conexão.
             SqlConnection conn = new SqlConnection("Data Source=localhost;Persist Security Info=True;Initial Catalog=Ferias; User ID=sa;Password=167421es");
@@ -68,9 +50,24 @@ namespace ferias
             // Instanciando a conexão passando a string de conexão e a string de insert
             SqlCommand c = new SqlCommand(SQL, conn);
 
+            string cpfMod = "";
 
+            // Verifica se campo nome está preenchido.
+            if (txtNome.Text.Length == 0)
+            {
+                MessageBox.Show("Necessário preencher o nome.");
+                return;
+            }
+            cpfMod = txtcpf.Text.Replace(",", "").Replace("-", "");
+
+            // Verifica se o campo CPF possui 11 dígitos.
+            if (cpfMod.Length != 11)
+            {
+                MessageBox.Show("O CPF deve possuir 11 dígitos.");
+                return;
+            }
             c.Parameters.AddWithValue("@nome", txtNome.Text);
-            c.Parameters.AddWithValue("@cpf", txtcpf.Text);
+            c.Parameters.AddWithValue("@cpf", cpfMod);
             c.Parameters.AddWithValue("@datainicio", txtDataInicio.Text);
             c.Parameters.AddWithValue("@datafim", txtDataFim.Text);
             // Verificação do radio button para definir o valor passado para o banco (sexo).
@@ -108,10 +105,6 @@ namespace ferias
 
                 MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void excluir_Click(object sender, EventArgs e)
@@ -166,5 +159,9 @@ namespace ferias
                 }
         }
 
+        private void txtcpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

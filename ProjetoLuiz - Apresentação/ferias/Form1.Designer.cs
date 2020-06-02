@@ -49,13 +49,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtcpf = new System.Windows.Forms.TextBox();
+            this.txtcpf1 = new System.Windows.Forms.TextBox();
             this.txtMasculino = new System.Windows.Forms.RadioButton();
             this.txtFeminino = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.marcaFeriasTableAdapter = new ferias.FeriasDataSetTableAdapters.MarcaFeriasTableAdapter();
             this.credBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtcpf = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaFeriasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feriasDataSet)).BeginInit();
@@ -66,17 +67,16 @@
             // 
             this.txtDataInicio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDataInicio.Location = new System.Drawing.Point(30, 160);
+            this.txtDataInicio.Location = new System.Drawing.Point(30, 138);
             this.txtDataInicio.Name = "txtDataInicio";
             this.txtDataInicio.Size = new System.Drawing.Size(224, 20);
             this.txtDataInicio.TabIndex = 4;
-            this.txtDataInicio.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // txtDataFim
             // 
             this.txtDataFim.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDataFim.Location = new System.Drawing.Point(332, 160);
+            this.txtDataFim.Location = new System.Drawing.Point(332, 138);
             this.txtDataFim.Name = "txtDataFim";
             this.txtDataFim.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDataFim.Size = new System.Drawing.Size(219, 20);
@@ -84,17 +84,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(476, 186);
+            this.button1.Location = new System.Drawing.Point(476, 164);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 33);
             this.button1.TabIndex = 8;
             this.button1.Text = "Confirmar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.inclusao);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(395, 186);
+            this.button2.Location = new System.Drawing.Point(395, 164);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 33);
             this.button2.TabIndex = 7;
@@ -104,7 +104,8 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(11, 46);
+            this.txtNome.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtNome.Location = new System.Drawing.Point(11, 24);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(296, 20);
@@ -118,7 +119,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 30);
+            this.label1.Location = new System.Drawing.Point(8, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 20;
@@ -137,12 +138,11 @@
             this.dataFimDataGridViewTextBoxColumn,
             this.id});
             this.dataGridView.DataSource = this.marcaFeriasBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(8, 228);
+            this.dataGridView.Location = new System.Drawing.Point(8, 203);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(543, 235);
+            this.dataGridView.Size = new System.Drawing.Size(543, 260);
             this.dataGridView.TabIndex = 9;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -199,7 +199,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 160);
+            this.label2.Location = new System.Drawing.Point(8, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 13);
             this.label2.TabIndex = 23;
@@ -208,7 +208,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(301, 160);
+            this.label3.Location = new System.Drawing.Point(301, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 13);
             this.label3.TabIndex = 24;
@@ -217,38 +217,36 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 69);
+            this.label4.Location = new System.Drawing.Point(8, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 21;
             this.label4.Text = "CPF";
             // 
-            // txtcpf
+            // txtcpf1
             // 
-            this.txtcpf.Location = new System.Drawing.Point(11, 85);
-            this.txtcpf.MaxLength = 11;
-            this.txtcpf.Name = "txtcpf";
-            this.txtcpf.Size = new System.Drawing.Size(100, 20);
-            this.txtcpf.TabIndex = 1;
-            this.txtcpf.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtcpf1.Location = new System.Drawing.Point(332, 62);
+            this.txtcpf1.MaxLength = 11;
+            this.txtcpf1.Name = "txtcpf1";
+            this.txtcpf1.Size = new System.Drawing.Size(100, 20);
+            this.txtcpf1.TabIndex = 1;
             // 
             // txtMasculino
             // 
             this.txtMasculino.AutoSize = true;
             this.txtMasculino.Checked = true;
-            this.txtMasculino.Location = new System.Drawing.Point(11, 131);
+            this.txtMasculino.Location = new System.Drawing.Point(11, 109);
             this.txtMasculino.Name = "txtMasculino";
             this.txtMasculino.Size = new System.Drawing.Size(73, 17);
             this.txtMasculino.TabIndex = 2;
             this.txtMasculino.TabStop = true;
             this.txtMasculino.Text = "Masculino";
             this.txtMasculino.UseVisualStyleBackColor = true;
-            this.txtMasculino.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // txtFeminino
             // 
             this.txtFeminino.AutoSize = true;
-            this.txtFeminino.Location = new System.Drawing.Point(107, 131);
+            this.txtFeminino.Location = new System.Drawing.Point(107, 109);
             this.txtFeminino.Name = "txtFeminino";
             this.txtFeminino.Size = new System.Drawing.Size(67, 17);
             this.txtFeminino.TabIndex = 3;
@@ -259,7 +257,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 115);
+            this.label5.Location = new System.Drawing.Point(8, 93);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 22;
@@ -267,7 +265,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(314, 186);
+            this.button3.Location = new System.Drawing.Point(314, 164);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 33);
             this.button3.TabIndex = 6;
@@ -283,16 +281,26 @@
             // 
             this.credBindingSource.DataMember = "cred";
             // 
+            // txtcpf
+            // 
+            this.txtcpf.Location = new System.Drawing.Point(8, 62);
+            this.txtcpf.Mask = "000.000.000-00";
+            this.txtcpf.Name = "txtcpf";
+            this.txtcpf.Size = new System.Drawing.Size(100, 20);
+            this.txtcpf.TabIndex = 25;
+            this.txtcpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtcpf_MaskInputRejected);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 473);
+            this.Controls.Add(this.txtcpf);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtFeminino);
             this.Controls.Add(this.txtMasculino);
-            this.Controls.Add(this.txtcpf);
+            this.Controls.Add(this.txtcpf1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -334,7 +342,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtcpf;
+        private System.Windows.Forms.TextBox txtcpf1;
         private System.Windows.Forms.RadioButton txtMasculino;
         private System.Windows.Forms.RadioButton txtFeminino;
         private System.Windows.Forms.Label label5;
@@ -345,6 +353,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInicioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFimDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.MaskedTextBox txtcpf;
     }
 }
 
