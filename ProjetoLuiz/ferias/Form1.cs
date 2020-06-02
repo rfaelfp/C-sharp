@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ferias
 {
@@ -163,6 +164,20 @@ namespace ferias
                 {
                     MessageBox.Show("A rotina de exclusão foi cancelada!");
                 }
+        }
+        public static void ThreadProc()
+        {
+            Application.Run(new Form2());
+        }
+
+        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+            t.Start();
+        }
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -18,3 +18,5 @@ C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz\ferias\obj\Debug\ferias.csproj.
 C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz\ferias\obj\Debug\ferias.csproj.CoreCompileInputs.cache
 C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz\ferias\obj\Debug\ferias.exe
 C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz\ferias\obj\Debug\ferias.pdb
+C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz\ferias\obj\Debug\ferias.Form2.resources
+C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz\ferias\obj\Debug\ferias.Form3.resources
