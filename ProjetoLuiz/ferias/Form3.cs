@@ -29,7 +29,11 @@ namespace ferias
             this.Close();
         }
 
+<<<<<<< HEAD
         private void atualizar (object sender, EventArgs e)
+=======
+        private void button2_Click(object sender, EventArgs e)
+>>>>>>> 03e548645587099b0a93d5537e44ce13194bb4bc
         {
             this.cadastroFuncionariosTableAdapter.Fill(this.cadastroFuncionarios._CadastroFuncionarios);
         }

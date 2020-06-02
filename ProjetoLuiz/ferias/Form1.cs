@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Reflection.Emit;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ferias
 {
@@ -45,7 +45,6 @@ namespace ferias
                 txtFeminino.Checked = false;
                 txtMasculino.Checked = true;
             }
-
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -69,6 +68,7 @@ namespace ferias
             // Instanciando a conexão passando a string de conexão e a string de insert
             SqlCommand c = new SqlCommand(SQL, conn);
 
+
             c.Parameters.AddWithValue("@nome", txtNome.Text);
             c.Parameters.AddWithValue("@cpf", txtcpf.Text);
             c.Parameters.AddWithValue("@datainicio", txtDataInicio.Text);
@@ -90,6 +90,7 @@ namespace ferias
                 MessageBox.Show("Inclusão realizada!", "Sucesso");
                 // Carrega o DataGridView atualizando o grid com a inclusão realizada.
                 this.marcaFeriasTableAdapter.Fill(this.feriasDataSet.MarcaFerias);
+                
             }
             catch (SqlException ex)
             {
@@ -115,14 +116,67 @@ namespace ferias
 
         private void excluir_Click(object sender, EventArgs e)
         {
-            // Criando string de conexão.
-            SqlConnection conn = new SqlConnection("Data Source=localhost;Persist Security Info=True;Initial Catalog=Ferias; User ID=sa;Password=167421es");
+            // Realiza questionamento ao usuário para que confirme a exclusão.
+            string confirmacao;
+            confirmacao = "Tem certeza que deseja excluir o registro?";
+            DialogResult resultadoMessege = MessageBox.Show(confirmacao, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-            // Declarando variável de string com o comando SQL de update.
-            string SQL = "delete MarcaFerias where id =  ";
+            // Caso a confirmação ocorra será executado a exclusão do registro.
+            if (resultadoMessege == DialogResult.Yes)
+            {
+                if (dataGridView.Rows.Count > 0)
+                // Consultando o valor do id do data grid view para passar como parâmetro.
+                {
+                    int selectedrowindex = dataGridView.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView.Rows[selectedrowindex];
+                    string valorId = Convert.ToString(selectedRow.Cells["id"].Value);
 
-            // Instanciando a conexão passando a string de conexão e a string de insert
-            SqlCommand c = new SqlCommand(SQL, conn);
+                    // Criando string de conexão.
+                    SqlConnection conn = new SqlConnection("Data Source=localhost;Persist Security Info=True;Initial Catalog=Ferias; User ID=sa;Password=167421es");
+
+                    // Declarando variável de string com o comando SQL de update.
+                    string SQL = $"delete MarcaFerias where id = {valorId}";
+
+                    // Instanciando a conexão passando a string de conexão e a string de insert
+                    SqlCommand c = new SqlCommand(SQL, conn);
+                    try
+                    {
+                        // Abertura de conexão, execução do delete e atualização do data grid view;
+                        conn.Open();
+                        c.ExecuteNonQuery();
+                        conn.Close();
+                        this.marcaFeriasTableAdapter.Fill(this.feriasDataSet.MarcaFerias);
+                    }
+                    catch (SqlException ex)
+                    {
+                        // Mostra o erro de exceção que seja relacionado ao banco de dados.
+                        string msg;
+                        msg = "Erro: " + ex.Message;
+                        MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não há registro selecionado!");
+                }
+            }
+            else
+                {
+                    MessageBox.Show("A rotina de exclusão foi cancelada!");
+                }
+        }
+        public static void ThreadProc()
+        {
+            Application.Run(new Form2());
+        }
+
+        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+            t.Start();
+        }
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }
