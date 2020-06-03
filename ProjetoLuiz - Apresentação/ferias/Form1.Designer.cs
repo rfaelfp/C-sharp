@@ -59,10 +59,12 @@
             this.txtDezDias = new System.Windows.Forms.RadioButton();
             this.txtQuinzeDias = new System.Windows.Forms.RadioButton();
             this.txtTrintaDias = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaFeriasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feriasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.credBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDataInicio
@@ -73,6 +75,7 @@
             this.txtDataInicio.Name = "txtDataInicio";
             this.txtDataInicio.Size = new System.Drawing.Size(224, 20);
             this.txtDataInicio.TabIndex = 4;
+            this.txtDataInicio.ValueChanged += new System.EventHandler(this.valoresDias);
             // 
             // txtDataFim
             // 
@@ -233,6 +236,7 @@
             this.txtMasculino.Name = "txtMasculino";
             this.txtMasculino.Size = new System.Drawing.Size(73, 17);
             this.txtMasculino.TabIndex = 2;
+            this.txtMasculino.TabStop = true;
             this.txtMasculino.Text = "Masculino";
             this.txtMasculino.UseVisualStyleBackColor = true;
             // 
@@ -269,10 +273,6 @@
             // 
             this.marcaFeriasTableAdapter.ClearBeforeFill = true;
             // 
-            // credBindingSource
-            // 
-            this.credBindingSource.DataMember = "cred";
-            // 
             // txtcpf
             // 
             this.txtcpf.Location = new System.Drawing.Point(11, 62);
@@ -284,44 +284,54 @@
             // txtDezDias
             // 
             this.txtDezDias.AutoSize = true;
-            this.txtDezDias.Location = new System.Drawing.Point(332, 109);
+            this.txtDezDias.Location = new System.Drawing.Point(6, 15);
             this.txtDezDias.Name = "txtDezDias";
             this.txtDezDias.Size = new System.Drawing.Size(59, 17);
             this.txtDezDias.TabIndex = 26;
             this.txtDezDias.Text = "10 dias";
             this.txtDezDias.UseVisualStyleBackColor = true;
-            this.txtDezDias.CheckedChanged += new System.EventHandler(this.atualizaDezDias);
+            this.txtDezDias.Click += new System.EventHandler(this.atualizarDias);
             // 
             // txtQuinzeDias
             // 
             this.txtQuinzeDias.AutoSize = true;
-            this.txtQuinzeDias.Location = new System.Drawing.Point(397, 109);
+            this.txtQuinzeDias.Location = new System.Drawing.Point(71, 15);
             this.txtQuinzeDias.Name = "txtQuinzeDias";
             this.txtQuinzeDias.Size = new System.Drawing.Size(59, 17);
             this.txtQuinzeDias.TabIndex = 27;
             this.txtQuinzeDias.Text = "15 dias";
             this.txtQuinzeDias.UseVisualStyleBackColor = true;
-            this.txtQuinzeDias.CheckedChanged += new System.EventHandler(this.atualizaQuinzeDias);
+            this.txtQuinzeDias.Click += new System.EventHandler(this.atualizarDias);
             // 
             // txtTrintaDias
             // 
             this.txtTrintaDias.AutoSize = true;
-            this.txtTrintaDias.Location = new System.Drawing.Point(462, 109);
+            this.txtTrintaDias.Location = new System.Drawing.Point(136, 15);
             this.txtTrintaDias.Name = "txtTrintaDias";
             this.txtTrintaDias.Size = new System.Drawing.Size(59, 17);
             this.txtTrintaDias.TabIndex = 28;
             this.txtTrintaDias.Text = "30 dias";
             this.txtTrintaDias.UseVisualStyleBackColor = true;
-            this.txtTrintaDias.CheckedChanged += new System.EventHandler(this.atualizaTrintaDias);
+            this.txtTrintaDias.Click += new System.EventHandler(this.atualizarDias);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtDezDias);
+            this.groupBox1.Controls.Add(this.txtQuinzeDias);
+            this.groupBox1.Controls.Add(this.txtTrintaDias);
+            this.groupBox1.Location = new System.Drawing.Point(332, 91);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(219, 41);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Quantidade";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 473);
-            this.Controls.Add(this.txtTrintaDias);
-            this.Controls.Add(this.txtQuinzeDias);
-            this.Controls.Add(this.txtDezDias);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtcpf);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
@@ -346,6 +356,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.marcaFeriasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.feriasDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.credBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,9 +391,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFimDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.MaskedTextBox txtcpf;
-        private System.Windows.Forms.RadioButton txtDezDias;
         private System.Windows.Forms.RadioButton txtQuinzeDias;
         private System.Windows.Forms.RadioButton txtTrintaDias;
+        internal System.Windows.Forms.RadioButton txtDezDias;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

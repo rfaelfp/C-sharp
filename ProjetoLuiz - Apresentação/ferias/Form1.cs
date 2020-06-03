@@ -55,7 +55,7 @@ namespace ferias
             // Instanciando a conexão passando a string de conexão e a string de insert
             SqlCommand c = new SqlCommand(SQL, conn);
 
-            string cpfMod = "";
+            
 
             // Verifica se campo nome está preenchido.
             if (txtNome.Text.Length == 0)
@@ -63,13 +63,20 @@ namespace ferias
                 MessageBox.Show("Necessário preencher o nome.");
                 return;
             }
-            cpfMod = txtcpf.Text.Replace(".", "").Replace("-", "");
+            // Retira os valores da máscara do CPF.
+            string cpfMod = txtcpf.Text.Replace(".", "").Replace("-", "");
 
             // Verifica se o campo CPF possui 11 dígitos.
             if (cpfMod.Length != 11)
             {
                 MessageBox.Show("O CPF deve possuir 11 dígitos.");
                 return;
+            }
+            if (txtDataInicio.Text == txtDataFim.Text)
+            {
+                MessageBox.Show("O período deve ser informado.");
+                return;
+
             }
             c.Parameters.AddWithValue("@nome", txtNome.Text);
             c.Parameters.AddWithValue("@cpf", cpfMod);
@@ -85,12 +92,12 @@ namespace ferias
 
             try
             {
-                // Realizando abertura de conexão com o banco de dados, executando a query e fechando a conexão, ao final retorno de mensagem para o usuário.
+                // Realizando abertura de conexão com o banco de dados, executando a query e fecha a conexão, finaliza com o retorno de mensagem para o usuário.
                 conn.Open();
                 c.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Inclusão realizada!", "Sucesso");
-                // Carrega o DataGridView atualizando o grid com a inclusão realizada.
+                // Carrega o DataGridView atualizando o grid com a inclusão realizada e chama o método que reinicia os valores padrões dos campos.
                 this.marcaFeriasTableAdapter.Fill(this.feriasDataSet.MarcaFerias);
                 limparCampos();
 
@@ -99,7 +106,7 @@ namespace ferias
             {
                 string msg;
 
-                // Tratamento de constrain retornando mensagem mais agradável para usuário.
+                // Tratamento de constrain retornando mensagem mais agradável para usuário e caso haja outra mensagem de erro retornado pelo banco a emite.
                 if (ex.Message.Contains("UQ__MarcaFer"))
                     msg = "Já existe um funcionário cadastrado com esse CPF";
                 else
@@ -140,6 +147,7 @@ namespace ferias
                         conn.Open();
                         c.ExecuteNonQuery();
                         conn.Close();
+                        // Carrega o DataGridView atualizando o grid com a inclusão realizada e chama o método que reinicia os valores padrões dos campos.
                         this.marcaFeriasTableAdapter.Fill(this.feriasDataSet.MarcaFerias);
                         limparCampos();
                     }
@@ -161,35 +169,27 @@ namespace ferias
                 MessageBox.Show("A rotina de exclusão foi cancelada!");
             }
         }
-
-
-        public void atualizaDezDias(object sender, EventArgs e)
-        {
-            int dias = 10;
-            atualizarDias(ref dias);
-        }
-
-        private void atualizaQuinzeDias(object sender, EventArgs e)
-        {
-            int dias = 15;
-            atualizarDias(ref dias);
-        }
-
-        private void atualizaTrintaDias(object sender, EventArgs e)
-        {
-            int dias = 30;
-            atualizarDias(ref dias);
-        }
         // Método para atualizar a data de acordo com o valor selecionado.
-        private void atualizarDias(ref int dias)
+        private void atualizarDias(object sender, EventArgs e)
         {
+            int dias;
+            if (txtDezDias.Checked == true)
+                dias = 10;
+            else if (txtQuinzeDias.Checked == true)
+                dias = 15;
+            else
+                dias = 30;
             DateTime dtInicio = DateTime.Parse(txtDataInicio.Text);
             DateTime resposta = dtInicio.AddDays(dias);
             txtDataFim.Text = Convert.ToString(resposta);
         }
-        private void teste()
+        // Método para reiniciar os valores quando alterado a data inicial.
+        private void valoresDias(object sender, EventArgs e)
         {
-
+            txtDezDias.Checked = false;
+            txtQuinzeDias.Checked = false;
+            txtTrintaDias.Checked = false;
+            txtDataFim.Text = txtDataInicio.Text;
         }
     }
 }
