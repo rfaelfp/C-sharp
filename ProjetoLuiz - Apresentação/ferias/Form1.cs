@@ -55,7 +55,7 @@ namespace ferias
             // Instanciando a conexão passando a string de conexão e a string de insert
             SqlCommand c = new SqlCommand(SQL, conn);
 
-            
+
 
             // Verifica se campo nome está preenchido.
             if (txtNome.Text.Length == 0)
@@ -191,5 +191,10 @@ namespace ferias
             txtTrintaDias.Checked = false;
             txtDataFim.Text = txtDataInicio.Text;
         }
-    }
+
+        private void btnPrintFoarm (object sender, EventArgs e)
+        {
+
+        }
+    }    
 }

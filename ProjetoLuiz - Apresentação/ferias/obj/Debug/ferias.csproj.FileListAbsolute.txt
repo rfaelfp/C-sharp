@@ -30,3 +30,9 @@ C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz - Apresentação\ferias\obj\Deb
 C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz - Apresentação\ferias\obj\Debug\ferias.csproj.CoreCompileInputs.cache
 C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz - Apresentação\ferias\obj\Debug\ferias.exe
 C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz - Apresentação\ferias\obj\Debug\ferias.pdb
+C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz - Apresentação\ferias\bin\Debug\Microsoft.AnalysisServices.AppLocal.Core.dll
+C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz - Apresentação\ferias\bin\Debug\Microsoft.AnalysisServices.AppLocal.dll
+C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz - Apresentação\ferias\bin\Debug\Microsoft.AnalysisServices.AppLocal.Tabular.dll
+C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz - Apresentação\ferias\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz - Apresentação\ferias\bin\Debug\Newtonsoft.Json.dll
+C:\Users\rafael.pedrosa\Documents\C#\ProjetoLuiz - Apresentação\ferias\obj\Debug\ferias.csproj.CopyComplete
