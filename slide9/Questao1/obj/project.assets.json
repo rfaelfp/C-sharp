@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\questoesMetodoMaterial\\Questao1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\slide9\\Questao1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\questoesMetodoMaterial\\Questao1\\ConsoleApp1.csproj",
+      "projectPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\slide9\\Questao1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\rafael.pedrosa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\questoesMetodoMaterial\\Questao1\\obj\\",
+      "outputPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\slide9\\Questao1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rafael.pedrosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

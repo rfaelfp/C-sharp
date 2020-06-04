@@ -11,7 +11,7 @@ namespace Questao1
             for (i = 0; i < matriz.GetLength(0); i++)
                 for (j = 0; j < matriz.GetLength(1); j++)
                 {
-                    Console.WriteLine("Digite os valores da matriz: ");
+                    Console.Write("Digite os valores da matriz: ");
                     matriz[i, j] = Convert.ToInt32(Console.ReadLine());
                 }
             Console.WriteLine("Matriz: ");
