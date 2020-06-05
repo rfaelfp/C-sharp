@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\slide9\\Questao3\\ConsoleApp1.csproj",
-      "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\slide9\\Questao3\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\Lista10Wesley\\Questao1\\Questao1.csproj",
+      "projectName": "Questao1",
+      "projectPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\Lista10Wesley\\Questao1\\Questao1.csproj",
       "packagesPath": "C:\\Users\\rafael.pedrosa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\slide9\\Questao3\\obj\\",
+      "outputPath": "C:\\Users\\rafael.pedrosa\\Documents\\C#\\Lista10Wesley\\Questao1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rafael.pedrosa\\AppData\\Roaming\\NuGet\\NuGet.Config",

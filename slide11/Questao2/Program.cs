@@ -32,6 +32,9 @@ namespace Questao2
                 cor = Console.ReadLine();
                 Console.Write($"{controle}º veículo - ano: ");
                 ano = Convert.ToInt32(Console.ReadLine());
+                Console.Write($"{controle}º veículo - vendido(sim/não): ");
+                vendido = Console.ReadLine();
+
                 Console.Clear();
             }
             public void print (string tipo)
@@ -46,6 +49,10 @@ namespace Questao2
             public bool verificaVenda()
             {
                 bool ver = false;
+                if (vendido == "sim" || vendido == "s" || vendido == "1") 
+                    ver = true;
+                else
+                    Console.WriteLine("Veículo em estoque:");
                 return ver; 
             }
         }
@@ -61,12 +68,14 @@ namespace Questao2
             cadMotos.registrar(m);
             cadCarros.printVeiculo(c);
             cadMotos.printVeiculo(m);
+            cadCarros.estoque(c);
+            cadMotos.estoque(m);
         }
         static int tamVet (string tipo)
         {
-            int tam = 0;
-            Console.Write($"Digite a quantidade de {tipo}: ");
-            tam = Convert.ToInt32(Console.ReadLine());
+            Console.Write($"Digite a quantidade de {tipo}(s): ");
+            int tam = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
             return tam;
         }
         struct Cadastro
@@ -90,6 +99,14 @@ namespace Questao2
             {
                 for (int i = 0; i < dadosVeiculos.Length; i++)
                     dadosVeiculos[i].print(tipo);
+            }
+            public void estoque (string tipo)
+            {
+                for (int i = 0; i < dadosVeiculos.Length; i++)
+                {
+                    if (dadosVeiculos[i].verificaVenda() == false)
+                        dadosVeiculos[i].print(tipo);
+                }
             }
         }
 
