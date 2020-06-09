@@ -31,11 +31,16 @@ namespace Questao1
         }
         public void print()
         {
-            Console.WriteLine($"Aluno: {nome}");
-            Console.WriteLine($"Matrícula: {matricula}");
-            Console.WriteLine($"Matriculado no curso: {(Curso)curso}");
-            Console.Write($"Matéria(s): ");
-            printMateria();
+            if (nome != "" && matricula != "" && curso != 0)
+            {
+                Console.WriteLine($"Aluno: {nome}");
+                Console.WriteLine($"Matrícula: {matricula}");
+                Console.WriteLine($"Matriculado no curso: {(Curso)curso}");
+                Console.Write($"Matéria(s): ");
+                printMateria();
+            }
+            else
+                return;
         }
         public void lerMateria()
         {
@@ -51,17 +56,22 @@ namespace Questao1
 
             }
         }
-        public void cabecalho ()
+        public void cabecalho()
         {
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.WriteLine($"Aluno: {nome} - matrícula: {matricula}");
+            if (nome != "" && matricula != "" && curso != 0)
+            {
+                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.WriteLine($"Aluno: {nome} - matrícula: {matricula}");
+                Console.ResetColor();
+                Console.WriteLine();
+            }
         }
         public void printMateria()
         {
 
             for (int i = 0; i < materia.Length; i++)
                 if (materia[i] != 0)
-                Console.Write((Materia) materia[i] + ", ");
+                    Console.Write((Materia)materia[i] + ", ");
             Console.WriteLine("\n\n");
         }
         public void AtribuirNota()
@@ -70,11 +80,9 @@ namespace Questao1
             {
                 if (materia[i] != 0)
                 {
-                    Console.Write($"{(Materia) materia[i]}: ");
+                    Console.Write($"{(Materia)materia[i]}: ");
                     nota[i] = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
                 }
-
             }
         }
         public void listar(int op)
@@ -94,7 +102,26 @@ namespace Questao1
                     m++;
                 }
             }
-
+        }
+        public void aprovados()
+        {
+            for (int i = 0; i < nota.Length; i++)
+            {
+                if (nota[i] >= 70)
+                {
+                    Console.WriteLine($"{(Materia)materia[i]}: {nota[i]} - Aprovado!");
+                }
+            }
+        }
+        public void reprovados()
+        {
+            for (int i = 0; i < nota.Length; i++)
+            {
+                if (nota[i] < 70 && materia[i] != 0)
+                {
+                    Console.WriteLine($"{(Materia)materia[i]}: {nota[i]} - Reprovado!");
+                }
+            }
         }
     }
 }

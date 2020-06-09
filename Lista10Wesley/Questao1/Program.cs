@@ -8,10 +8,10 @@ namespace Questao1
     {
         static void Main(string[] args)
         {
-            int op;
-            DadosAlunos[] aluno = new DadosAlunos[qtdAlunos()];
+            DadosAlunos[] aluno = new DadosAlunos[10];
             Cadastro cad = new Cadastro(aluno);
             cad.IniciarVet(aluno);
+            int op;
             do
             {
                 op = menu();
@@ -28,26 +28,23 @@ namespace Questao1
                     case 2:
                         cad.nota();
                         break;
+                    case 3:
+                        cad.alunosAprovados();
+                        break;
+                    case 4:
+                        cad.alunosReprovados();
+                        break;
                     default:
                         Environment.Exit(0);
                         break;
                 }
             } while (op != 6);
 
-            static int qtdAlunos()
-            {
-                int qtd;
-                Console.Write("Digite a quantidade de alunos: ");
-                qtd = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-                return qtd;
-            }
-
             static int menu()
             {
                 int opList = 0, opNum;
                 Console.WriteLine("Sistema de cadastro de alunos.");
-                string[] op = { "Cadastrar aluno", "Imprimir alunos", "Atribuir nota", "Imprimir lista de aprovados", "lista de reprovados", "Sair" };
+                string[] op = { "Cadastrar aluno", "Imprimir alunos", "Atribuir nota", "Imprimir lista de aprovados", "Lista de reprovados", "Sair" };
                 for (int i = 0; i < op.Length; i++)
                 {
                     Console.WriteLine($"[{opList}] - {op[i]}");

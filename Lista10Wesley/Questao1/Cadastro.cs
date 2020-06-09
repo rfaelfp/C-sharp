@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Questao1
 {
@@ -17,29 +15,59 @@ namespace Questao1
             for (int i = 0; i < aluno.Length; i++)
                 aluno[i] = new DadosAlunos("", "", 0, new int[4], new int[4]);
         }
-        public void cadastro ()
+        public void cadastro()
         {
+            string teste;
             for (int i = 0; i < alunos.Length; i++)
             {
                 alunos[i].ler();
+                Console.WriteLine("Gostaria de incluir mais alunos? (sim/não)");
+                teste = Console.ReadLine().ToLower();
+                Console.Clear();
+                if (teste != "sim" && teste != "s" && teste != "1")
+                    break;
             }
         }
-        public void print ()
+        public void print()
         {
             for (int i = 0; i < alunos.Length; i++)
                 alunos[i].print();
-            Console.WriteLine("Aperte enter para voltar ao menu...");
-            Console.ReadLine();
-            Console.Clear();
+            compMenu();
         }
-        public void nota ()
+        public void nota()
         {
             for (int i = 0; i < alunos.Length; i++)
             {
                 alunos[i].cabecalho();
-                Console.ResetColor();
                 alunos[i].AtribuirNota();
+                Console.Clear();
             }
+            compMenu();
+        }
+        public void alunosAprovados()
+        {
+            for (int i = 0; i < alunos.Length; i++)
+            {
+                alunos[i].cabecalho();
+                alunos[i].aprovados();
+            }
+            compMenu();
+        }
+        public void alunosReprovados()
+        {
+            for (int i = 0; i < alunos.Length; i++)
+            {
+                alunos[i].cabecalho();
+                alunos[i].reprovados();
+            }
+            compMenu();
+
+        }
+        public void compMenu()
+        {
+            Console.WriteLine("\nAperte ENTER para voltar ao menu...\n\n");
+            Console.ReadLine();
+            Console.Clear();
         }
     }
 }
