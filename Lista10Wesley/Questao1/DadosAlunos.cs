@@ -68,7 +68,6 @@ namespace Questao1
         }
         public void printMateria()
         {
-
             for (int i = 0; i < materia.Length; i++)
                 if (materia[i] != 0)
                     Console.Write((Materia)materia[i] + ", ");
@@ -87,6 +86,7 @@ namespace Questao1
         }
         public void listar(int op)
         {
+            Console.WriteLine("-----------------------\n");
             int m = 1;
             if (op == 1)
                 foreach (var e in Enum.GetValues(typeof(Curso)))
@@ -102,6 +102,7 @@ namespace Questao1
                     m++;
                 }
             }
+            Console.WriteLine();
         }
         public void aprovados()
         {

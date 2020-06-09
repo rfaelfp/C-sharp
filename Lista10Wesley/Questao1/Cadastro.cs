@@ -42,7 +42,6 @@ namespace Questao1
                 alunos[i].AtribuirNota();
                 Console.Clear();
             }
-            compMenu();
         }
         public void alunosAprovados()
         {
