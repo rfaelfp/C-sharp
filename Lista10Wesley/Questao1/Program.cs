@@ -2,78 +2,62 @@
 
 namespace Questao1
 {
-    enum Curso { Curso1, Curso2, Curso3, Curso4, NaoHáCurso = -1 };
-    enum Materia { Materia1, Materia2, Materia3, Materia4 }
+    enum Curso { Curso1 = 1, Curso2, Curso3, Curso4 };
+    enum Materia { Materia1 = 1, Materia2, Materia3, Materia4 }
     class Program
     {
         static void Main(string[] args)
         {
             int op;
-            bool ver = false;
             DadosAlunos[] aluno = new DadosAlunos[qtdAlunos()];
             Cadastro cad = new Cadastro(aluno);
             cad.IniciarVet(aluno);
             do
             {
                 op = menu();
-            if (op >= 0 && op <= 3)
-                {
-                    if (op == 0)
-                        cad.cadastro();
-                    else if (op == 1)
-                        cad.print();
-                }
-                    if (op == 4)
-                        listar(op);
-                    else if (op == 5)
-                        listar(op);
-                    else if (op == 6)
-                {
-                        ver = true;
-                        Environment.Exit(0);
-                }
 
-            }
-            while (ver == false);
+                switch (op)
+                {
+                    case 0:
+                        Console.Clear();
+                        cad.cadastro();
+                        break;
+                    case 1:
+                        cad.print();
+                        break;
+                    case 2:
+                        cad.nota();
+                        break;
+                    default:
+                        Environment.Exit(0);
+                        break;
+                }
+            } while (op != 6);
 
             static int qtdAlunos()
             {
                 int qtd;
                 Console.Write("Digite a quantidade de alunos: ");
                 qtd = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
                 return qtd;
             }
 
-        }
-        static void listar(int op)
-        {
-            if (op == 4)
-                foreach (var e in Enum.GetValues(typeof(Curso)))
-                {
-                    Console.WriteLine(e);
-                }
-            if (op == 5)
+            static int menu()
             {
-                foreach (var e in Enum.GetValues(typeof(Materia)))
+                int opList = 0, opNum;
+                Console.WriteLine("Sistema de cadastro de alunos.");
+                string[] op = { "Cadastrar aluno", "Imprimir alunos", "Atribuir nota", "Imprimir lista de aprovados", "lista de reprovados", "Sair" };
+                for (int i = 0; i < op.Length; i++)
                 {
-                    Console.WriteLine(e);
+                    Console.WriteLine($"[{opList}] - {op[i]}");
+                    opList++;
                 }
+                Console.Write("\nDigite a opção desejada: ");
+                opNum = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+                return opNum;
             }
-        }
-        static int menu()
-        {
-            int opList = 0, opNum;
-            Console.WriteLine("Sistema de cadastro de alunos.");
-            string[] op = { "Cadastrar aluno", "Imprimir alunos", "Imprimir lista de aprovados", "lista de reprovados", "Imprimir cursos", "Imprimir matérias", "Sair" };
-            for (int i = 0; i < op.Length; i++)
-            {
-                Console.WriteLine($"[{opList}] - {op[i]}");
-                opList++;
-            }
-            Console.Write("\nDigite a opção desejada: ");
-            opNum = Convert.ToInt32(Console.ReadLine());
-
-            return opNum;
         }
     }
 }

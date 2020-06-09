@@ -15,7 +15,7 @@ namespace Questao1
         public void IniciarVet(DadosAlunos[] aluno)
         {
             for (int i = 0; i < aluno.Length; i++)
-                aluno[i] = new DadosAlunos("", "", -1);
+                aluno[i] = new DadosAlunos("", "", 0, new int[4], new int[4]);
         }
         public void cadastro ()
         {
@@ -28,6 +28,18 @@ namespace Questao1
         {
             for (int i = 0; i < alunos.Length; i++)
                 alunos[i].print();
+            Console.WriteLine("Aperte enter para voltar ao menu...");
+            Console.ReadLine();
+            Console.Clear();
+        }
+        public void nota ()
+        {
+            for (int i = 0; i < alunos.Length; i++)
+            {
+                alunos[i].cabecalho();
+                Console.ResetColor();
+                alunos[i].AtribuirNota();
+            }
         }
     }
 }

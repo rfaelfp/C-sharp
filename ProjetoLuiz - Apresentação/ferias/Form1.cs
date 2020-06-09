@@ -76,7 +76,6 @@ namespace ferias
             {
                 MessageBox.Show("O período deve ser informado.");
                 return;
-
             }
             c.Parameters.AddWithValue("@nome", txtNome.Text);
             c.Parameters.AddWithValue("@cpf", cpfMod);
