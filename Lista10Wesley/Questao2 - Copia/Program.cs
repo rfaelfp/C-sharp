@@ -48,10 +48,9 @@ namespace Questao2
                         MenuEscolha op2 = new MenuEscolha(0, opcoesAgencia);
                         e = op2.escolher();
                         if (e == 1)
-                        {
-                            //ag.printAg();
                             c.cadastrar(ag);
-                        }
+                        if (e == 2)
+                            c.inativar(ag);
                         break;
                     case 3:
                         menuConta.print();

@@ -15,7 +15,7 @@ namespace Questao2
 
         public void ler ()
         {
-            Console.Write("Códido da agência: ");
+            Console.Write("Código da agência: ");
             codigo = Console.ReadLine();
             Console.Write("Endereço da agência: ");
             endereco = Console.ReadLine();

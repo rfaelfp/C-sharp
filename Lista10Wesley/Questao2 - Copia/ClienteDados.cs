@@ -50,5 +50,10 @@ namespace Questao2
             if (inputString.ToLower() == "sim")
                 ativo = false;
         }
+        public void listaClienteAgencia(ref int numAgencia, ref int num)
+        {            
+            if (numAgencia == agencia)
+                Console.WriteLine($"[{num}] - Cliente: {nome} - CPF: {cpf} - Tel.: {telefone}");
+        }
     }
 }

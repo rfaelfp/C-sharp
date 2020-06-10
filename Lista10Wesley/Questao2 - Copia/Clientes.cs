@@ -34,8 +34,17 @@ namespace Questao2
                     break;
             }
         }
-        public void inativar ()
+        public void inativar (Agencia ag)
         {
+            int agencia, cli;
+            ag.printAg();
+            Console.Write("Escolha a agência que está o cliente: ");
+            agencia = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < clientes.Length; i++)
+                clientes[i].listaClienteAgencia(ref agencia, ref i);
+            Console.Write("Escolha o cliente que deseja inativar: ");
+            cli = Convert.ToInt32(Console.ReadLine());
+            clientes[cli].inativa();
 
         }
     }
