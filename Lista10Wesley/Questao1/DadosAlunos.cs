@@ -82,6 +82,8 @@ namespace Questao1
                     Console.Write($"{(Materia)materia[i]}: ");
                     nota[i] = Convert.ToInt32(Console.ReadLine());
                 }
+                else
+                    break;
             }
         }
         public void listar(int op)
@@ -104,15 +106,33 @@ namespace Questao1
             }
             Console.WriteLine();
         }
-        public void aprovados()
+        public bool aprovados(ref bool parar)
         {
+            bool ver = false;
             for (int i = 0; i < nota.Length; i++)
             {
-                if (nota[i] >= 70)
+                if (nome == "" && matricula == "" && curso == 0)
                 {
-                    Console.WriteLine($"{(Materia)materia[i]}: {nota[i]} - Aprovado!");
+                    parar = true;
+                    break;
+                }
+                else
+                {
+                    if (nota[i] >= 70)
+                    {
+                        Console.WriteLine($"{(Materia)materia[i]}: {nota[i]} - Aprovado!");
+                        ver = true;
+                    }
+
+                    if (ver == false)
+                    {
+                        Console.WriteLine($"O aluno {nome} não possui matéria(s) aprovada(s)!");
+                        break;
+                    }
+                    
                 }
             }
+            return parar;
         }
         public void reprovados()
         {

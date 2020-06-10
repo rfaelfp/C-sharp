@@ -64,7 +64,7 @@ namespace ferias
                 return;
             }
             // Retira os valores da máscara do CPF.
-            string cpfMod = txtcpf.Text.Replace(".", "").Replace("-", "");
+            string cpfMod = txtcpf.Text.Replace(".", "").Replace("-", "").Replace(",", "");
 
             // Verifica se o campo CPF possui 11 dígitos.
             if (cpfMod.Length != 11)
@@ -189,11 +189,6 @@ namespace ferias
             txtQuinzeDias.Checked = false;
             txtTrintaDias.Checked = false;
             txtDataFim.Text = txtDataInicio.Text;
-        }
-
-        private void btnPrintFoarm (object sender, EventArgs e)
-        {
-
         }
     }    
 }

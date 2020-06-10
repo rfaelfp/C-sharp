@@ -8,7 +8,7 @@ namespace Questao1
     {
         static void Main(string[] args)
         {
-            DadosAlunos[] aluno = new DadosAlunos[10];
+            DadosAlunos[] aluno = new DadosAlunos[5];
             Cadastro cad = new Cadastro(aluno);
             cad.IniciarVet(aluno);
             int op;
@@ -44,7 +44,7 @@ namespace Questao1
             {
                 int opList = 0, opNum;
                 Console.WriteLine("Sistema de cadastro de alunos.");
-                string[] op = { "Cadastrar aluno", "Imprimir alunos", "Atribuir nota", "Imprimir lista de aprovados", "Lista de reprovados", "Sair" };
+                string[] op = { "Cadastrar aluno", "Imprimir alunos", "Atribuir nota", "Lista de aprovados", "Lista de reprovados", "Sair" };
                 for (int i = 0; i < op.Length; i++)
                 {
                     Console.WriteLine($"[{opList}] - {op[i]}");

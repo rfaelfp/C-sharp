@@ -45,10 +45,13 @@ namespace Questao1
         }
         public void alunosAprovados()
         {
+            bool parar = false;
             for (int i = 0; i < alunos.Length; i++)
             {
                 alunos[i].cabecalho();
-                alunos[i].aprovados();
+                alunos[i].aprovados(ref parar);
+                if (parar == true)
+                    break;
             }
             compMenu();
         }
