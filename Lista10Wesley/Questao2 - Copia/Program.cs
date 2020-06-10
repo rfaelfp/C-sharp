@@ -11,6 +11,9 @@ namespace Questao2
             AgenciaDados[] agencia = new AgenciaDados[5];
             Agencia ag = new Agencia(agencia);
             ag.iniciarVet();
+            ClienteDados[] clientes = new ClienteDados[15];
+            Clientes c = new Clientes(clientes);
+            c.iniciarVet();
             string[] opcoesMenu = { "Operações de agência", "Operação de conta", "Depósito/Transferência/Saldo" };
             string[] opcoesBanco = { "Incluir agência", "Excluir agência", "Imprimir dados agência", "Saldo do banco", "Saldo conta corrente", "Saldo conta poupança" };
             string[] opcoesAgencia = { "A abertura de conta em cada agência", "O encerramento de conta em cada agência", "A impressão de dados das contas de cada agência", "A impressão do saldo total depositado em cada agência", "A impressão do saldo total em conta corrente de cada agência", "A impressão do saldo total em conta poupança de cada agência" };
@@ -35,17 +38,25 @@ namespace Questao2
                             ag.excluirAgencia();
                         else if (e == 3)
                             ag.printAg();
+                        else if (e == 4) ;
+                        else if (e == 5) ;
+                        else if (e == 6) ;
 
                         break;
                     case 2:
                         menuAgencia.print();
                         MenuEscolha op2 = new MenuEscolha(0, opcoesAgencia);
-                        op2.escolher();
+                        e = op2.escolher();
+                        if (e == 1)
+                        {
+                            //ag.printAg();
+                            c.cadastrar(ag);
+                        }
                         break;
                     case 3:
                         menuConta.print();
                         MenuEscolha op3 = new MenuEscolha(0, opcoesConta);
-                        op3.escolher();
+                        e  = op3.escolher();
                         break;
                     default:
                         break;
