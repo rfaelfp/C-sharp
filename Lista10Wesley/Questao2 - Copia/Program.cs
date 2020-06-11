@@ -7,55 +7,46 @@ namespace Questao2
         static void Main(string[] args)
         {
             bool loop = true;
-            Console.WriteLine("Sistema Bancário");
             AgenciaDados[] agencia = new AgenciaDados[5];
             Agencia ag = new Agencia(agencia);
             ag.iniciarVet();
             ClienteDados[] clientes = new ClienteDados[15];
             Clientes c = new Clientes(clientes);
             c.iniciarVet();
-            string[] opcoesMenu = { "Operações de agência", "Operação de conta", "Depósito/Transferência/Saldo" };
-            string[] opcoesBanco = { "Incluir agência", "Excluir agência", "Imprimir dados agência", "Saldo do banco", "Saldo conta corrente", "Saldo conta poupança" };
-            string[] opcoesAgencia = { "A abertura de conta em cada agência", "O encerramento de conta em cada agência", "A impressão de dados das contas de cada agência", "A impressão do saldo total depositado em cada agência", "A impressão do saldo total em conta corrente de cada agência", "A impressão do saldo total em conta poupança de cada agência" };
-            string[] opcoesConta = { "Realizar depósitos nas contas correntes", "Realizar depósitos nas contas poupança", "Realizar saques nas contas correntes", "Realizar saques nas contas poupanças", "Transferir dinheiro de conta corrente para conta poupança", "Transferir dinheiro de conta poupança para conta corrente", "Verificar o saldo de conta corrente", "Verificar o saldo de conta poupança", "Verificar o limite da conta corrente usado pelo cliente" };
-            Menu menu = new Menu(opcoesMenu);
-            Menu menuBanco = new Menu(opcoesBanco);
-            Menu menuAgencia = new Menu(opcoesAgencia);
-            Menu menuConta = new Menu(opcoesConta);
-            MenuEscolha opM = new MenuEscolha(0, opcoesMenu);
+            MenuEscolha opM = new MenuEscolha(0);
             do
             {
-                menu.print();
+                int op = 0;
+                Console.WriteLine("Sistema Bancário");
+                opM.PrintOpcao(opM.DefineOpcao(ref op));
                 switch (opM.escolher())
                 {
                     case 1:
-                        menuBanco.print();
-                        MenuEscolha op1 = new MenuEscolha(0, opcoesBanco);
-                        int e = op1.escolher();
-                        if (e == 1)
+                        int op1 = 1;
+                        opM.PrintOpcao(opM.DefineOpcao(ref op1));
+                        int opSub1 = opM.escolher();
+                        if (opSub1 == 1)
                             ag.lerAgencia();
-                        else if (e == 2)
+                        else if (opSub1 == 2)
                             ag.excluirAgencia();
-                        else if (e == 3)
+                        else if (opSub1 == 3)
                             ag.printAg();
-                        else if (e == 4) ;
-                        else if (e == 5) ;
-                        else if (e == 6) ;
-
+                        else if (opSub1 == 4) ;
+                        else if (opSub1 == 5) ;
+                        else if (opSub1 == 6) ;
                         break;
                     case 2:
-                        menuAgencia.print();
-                        MenuEscolha op2 = new MenuEscolha(0, opcoesAgencia);
-                        e = op2.escolher();
-                        if (e == 1)
+                        int op2 = 2;
+                        opM.PrintOpcao(opM.DefineOpcao(ref op2));
+                        int opSub2 = opM.escolher();
+                        if (opSub2 == 1)
                             c.cadastrar(ag);
-                        if (e == 2)
+                        if (opSub2 == 2)
                             c.inativar(ag);
                         break;
                     case 3:
-                        menuConta.print();
-                        MenuEscolha op3 = new MenuEscolha(0, opcoesConta);
-                        e  = op3.escolher();
+                        int op3 = 3;
+                        opM.PrintOpcao(opM.DefineOpcao(ref op3));
                         break;
                     default:
                         break;

@@ -31,7 +31,10 @@ namespace Questao2
                 ver = Console.ReadLine();
                 Console.Clear();
                 if (ver != "sim" && ver != "s" && ver != "1")
+                {
+                    Console.Clear();
                     break;
+                }
             }
         }
         public void inativar (Agencia ag)
@@ -40,6 +43,7 @@ namespace Questao2
             ag.printAg();
             Console.Write("Escolha a agência que está o cliente: ");
             agencia = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
             for (int i = 0; i < clientes.Length; i++)
                 clientes[i].listaClienteAgencia(ref agencia, ref i);
             Console.Write("Escolha o cliente que deseja inativar: ");

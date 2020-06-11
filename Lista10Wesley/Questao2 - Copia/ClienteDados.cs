@@ -24,7 +24,7 @@ namespace Questao2
         }
         public void ler ()
         {
-            Console.Write("Escolha a agência que o cliente será cadastrada: ");
+            Console.Write("Escolha a agência que o cliente será cadastrado: ");
             agencia = Convert.ToInt32(Console.ReadLine());
             Console.Write("Nome: ");
             nome = Console.ReadLine();
@@ -34,21 +34,22 @@ namespace Questao2
             telefone = Console.ReadLine();
             Console.Write("Data nascimento: ");
             nascimento = Console.ReadLine();
-            Console.Write("Conta corrente: (sim/não) ");
+            Console.Write("Conta corrente: (s/n) ");
             string inputString = Console.ReadLine();
-            if (inputString.ToLower() == "sim")
+            if (inputString.ToLower() == "s")
                 corrente = true;
-            Console.Write("Conta poupança: (sim/não) ");
+            Console.Write("Conta poupança: (s/n) ");
             inputString = Console.ReadLine();
-            if (inputString.ToLower() == "sim")
+            if (inputString.ToLower() == "s")
                 poupanca = true;
         }
         public void inativa ()
         {
-            Console.Write("Confirme a inativação: (sim/não)");
+            Console.Write("Confirme a inativação: (s/n)");
             string inputString = Console.ReadLine();
-            if (inputString.ToLower() == "sim")
+            if (inputString.ToLower() == "s")
                 ativo = false;
+            Console.Clear();
         }
         public void listaClienteAgencia(ref int numAgencia, ref int num)
         {            

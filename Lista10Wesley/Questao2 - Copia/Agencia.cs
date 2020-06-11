@@ -26,7 +26,10 @@ namespace Questao2
                 Console.WriteLine("Deseja incluir outra agência? (s/n)");
                 verif = Console.ReadLine();
                 if (verif != "sim" && verif != "s" && verif != "1")
+                {
+                    Console.Clear();
                     break;
+                }
             }
         }
         public void printAg ()
@@ -41,7 +44,7 @@ namespace Questao2
             Console.Write("Escolha a opção que deseja excluir: ");
             escolha = Convert.ToInt32(Console.ReadLine());
             dados[escolha - 1].apagar();
-            Console.Write($"Agência {escolha} excluída\nPressiona ENTER para voltar ao menu...");
+            Console.Write($"Agência {escolha} excluída\nPressione ENTER para voltar ao menu...");
             Console.ReadLine();
             Console.Clear();
         }
