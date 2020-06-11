@@ -17,9 +17,16 @@ namespace Questao2
             saldoPoupanca = SaldoPoupanca;
         }
 
-        public void ler ()
+        public void LerDadosConta ()
         {
-
+            Console.WriteLine("Codigo conta corrente: ");
+            codigoCorrente = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Inserir saldo: ");
+            saldoCorrente = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Código poupança: ");
+            codigoPoupanca = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Inserir saldo: ");
+            saldoPoupanca = Convert.ToDouble(Console.ReadLine());
         }
     }
 }
