@@ -28,9 +28,14 @@ namespace Questao2
             endereco = "";
             telefone = "";
         }
-        public void print (ref int i)
+        public bool print (ref int i)
         {
+            bool ver = false;
+            if (codigo == "" && endereco == "" && telefone == "")
+                ver = true;
+            else
             Console.WriteLine($"[{i + 1}] - Ag. {codigo} - {endereco} - {telefone}");
+            return ver;
         }
     }
 }

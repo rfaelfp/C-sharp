@@ -32,10 +32,24 @@ namespace Questao2
                 }
             }
         }
-        public void printAg()
+        public bool printAg()
         {
+            bool ver = false;
+            int contVer = 0;
             for (int i = 0; i < dados.Length; i++)
-                dados[i].print(ref i);
+            {
+                if (dados[i].print(ref i) == true)
+                    contVer++;
+                if (dados.Length == contVer)
+                {
+                    ver = true;
+                    Console.WriteLine("Não há agências cadastradas!");
+                    Console.Write($"\nPressione ENTER para voltar ao menu...");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+            }
+            return ver;
         }
         public void excluirAgencia()
         {

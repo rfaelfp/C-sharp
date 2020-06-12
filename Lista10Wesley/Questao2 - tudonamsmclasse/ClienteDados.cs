@@ -161,12 +161,58 @@ namespace Questao2
                 {
                     saldoCorrente -= valor;
                     saldoPoupanca += valor;
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Saldo conta corrente: R$: {Math.Round(saldoCorrente, 2)}");
+                    Console.ResetColor();
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Saldo conta poupança: R$: {Math.Round(saldoPoupanca, 2)}");
+                    Console.ResetColor();
                     Console.WriteLine("Transferência realizada!");
                     ver = true;
                 }
-            } 
-                while (ver == false) ;
-
+            } while (ver == false) ;
         }
+        public void TransfPoupancaCorrente()
+        {
+            bool ver = false;
+            double valor;
+            Console.WriteLine($"Saldo conta corrente: R$: {Math.Round(saldoCorrente, 2)}");
+            Console.WriteLine($"Saldo conta poupança: R$: {Math.Round(saldoPoupanca, 2)}");
+            do
+            {
+                Console.WriteLine("Digite o valor da transferência: ");
+                valor = Convert.ToInt32(Console.ReadLine());
+                if (valor > saldoPoupanca)
+                    Console.WriteLine("Não há saldo suficiente!");
+                else
+                {
+                    saldoPoupanca -= valor;
+                    saldoCorrente += valor;
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Saldo conta corrente: R$: {Math.Round(saldoCorrente, 2)}");
+                    Console.ResetColor();
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Saldo conta poupança: R$: {Math.Round(saldoPoupanca, 2)}");
+                    Console.ResetColor();
+                    Console.WriteLine("Transferência realizada!");
+                    ver = true;
+                }
+            } while (ver == false);
+        }
+        public void SaldoCorrente()
+        {
+            if (corrente == true)
+            Console.WriteLine($"O saldo da conta corrente é R$: {Math.Round(saldoCorrente, 2)}");
+            else
+                Console.WriteLine($"O cliente {nome} de CPF {cpf} não possui conta corrente!");
+        }
+        public void SaldoPoupanca()
+        {
+            if (poupanca == true)
+                Console.WriteLine($"O saldo da conta poupanca é R$: {Math.Round(saldoPoupanca, 2)}");
+            else
+                Console.WriteLine($"O cliente {nome} de CPF {cpf} não possui conta poupança!");
+        }
+
     }
 }

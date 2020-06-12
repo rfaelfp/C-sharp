@@ -69,11 +69,11 @@ namespace Questao2
                         else if (opSub3 == 5)
                             c.TransfCorrentePoupanca(ag);
                         else if (opSub3 == 6)
-                            c.DepositarPoupanca(ag);
+                            c.TransfPoupancaCorrente(ag);
                         else if (opSub3 == 7)
-                            c.DepositarPoupanca(ag);
+                            c.SaldoCorrente(ag);
                         else if (opSub3 == 8)
-                            c.DepositarPoupanca(ag);
+                            c.SaldoPoupanca(ag);
                         else if (opSub3 == 9)
                             c.DepositarPoupanca(ag);
                         break;
