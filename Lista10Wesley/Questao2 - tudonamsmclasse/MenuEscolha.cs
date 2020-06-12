@@ -32,7 +32,7 @@ namespace Questao2
             }
             else if (escolha == 2)
             {
-                string[] opcoesAgencia = { "A abertura de conta em cada agência", "O encerramento de conta em cada agência", "A impressão de dados das contas de cada agência", "A impressão do saldo total depositado em cada agência", "A impressão do saldo total em conta corrente de cada agência", "A impressão do saldo total em conta poupança de cada agência", "Voltar" };
+                string[] opcoesAgencia = { "Abertura de conta em cada agência", "Encerrar conta em cada agência", "Imprimir dados das contas de cada agência", "Imprimir saldo total depositado em cada agência", "Imprimir saldo total em conta corrente de cada agência", "Imprimir saldo total em conta poupança de cada agência", "Voltar" };
                 opcao = opcoesAgencia;
             }
             else if (escolha == 3)

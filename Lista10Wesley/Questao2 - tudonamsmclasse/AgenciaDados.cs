@@ -37,5 +37,12 @@ namespace Questao2
             Console.WriteLine($"[{i + 1}] - Ag. {codigo} - {endereco} - {telefone}");
             return ver;
         }
+        public bool PosicaoLivre()
+        {
+            bool ver = false;
+            if (codigo == "" && endereco == "" && telefone == "")
+                ver = true;
+            return ver;
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace Questao2
             opcao = Opcao;
         }
         public void print ()
-        {            
+        {
+            Console.Clear();
             for (int i = 0; i < opcao.Length; i++)
             {
                 Console.WriteLine($"[{i + 1}] - {opcao[i]}");

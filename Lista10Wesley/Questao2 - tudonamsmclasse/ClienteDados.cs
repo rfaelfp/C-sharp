@@ -27,8 +27,9 @@ namespace Questao2
         }
         public void ler()
         {
-            Console.Write("Escolha a agência que o cliente será cadastrado: ");
+            Console.Write("\nEscolha a agência que o cliente será cadastrado: ");
             agencia = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
             Console.Write("Nome: ");
             nome = Console.ReadLine();
             Console.Write("CPF: ");
@@ -44,8 +45,6 @@ namespace Questao2
                 corrente = true;
                 Console.Write("Codigo conta corrente: ");
                 codigoCorrente = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Inserir saldo: ");
-                saldoCorrente = Convert.ToDouble(Console.ReadLine());
             }
 
             Console.Write("Conta poupança: (s/n) ");
@@ -55,8 +54,6 @@ namespace Questao2
                 poupanca = true;
                 Console.Write("Codigo conta poupanca: ");
                 codigoPoupanca = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Inserir saldo: ");
-                saldoPoupanca = Convert.ToDouble(Console.ReadLine());
             }
         }
         public void inativa()
@@ -77,7 +74,31 @@ namespace Questao2
         public void listaClienteAgencia(ref int numAgencia, ref int num)
         {
             if (numAgencia == agencia)
-                Console.WriteLine($"[{num}] - Cliente: {nome} - CPF: {cpf} - Tel.: {telefone}");
+            {
+                Console.WriteLine($"[{num}] - Cliente: {nome} - CPF: {cpf} - Tel.: {telefone} - Nascimento: {nascimento}");
+                if (corrente == true)
+                    Console.WriteLine($"Conta corrente: SIM - Código conta corrente: {codigoCorrente}");
+                else
+                    Console.WriteLine($"Conta poupança: NÃO - Código conta corrente: ---");
+                if (poupanca == true)
+                    Console.WriteLine($"Conta poupança: SIM - Código conta corrente: {codigoPoupanca}");
+                else
+                    Console.WriteLine($"Conta poupança: NÃO - Código conta corrente: ---");
+                Console.Write("Status da conta: ");
+                if (ativo == true)
+                {
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Ativo!\n");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Inativo!\n");
+                    Console.ResetColor();
+                }
+
+            }
         }
         public void ListarClientes(ref int num)
         {
