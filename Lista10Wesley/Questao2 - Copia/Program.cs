@@ -13,6 +13,9 @@ namespace Questao2
             ClienteDados[] clientes = new ClienteDados[15];
             Clientes c = new Clientes(clientes);
             c.iniciarVet();
+            ContasDados[] contasDados = new ContasDados[15];
+            Contas contas = new Contas(contasDados);
+            contas.iniciarVet();
             MenuEscolha opM = new MenuEscolha(0);
             do
             {
@@ -41,8 +44,10 @@ namespace Questao2
                         int opSub2 = opM.escolher();
                         if (opSub2 == 1)
                             c.cadastrar(ag);
-                        if (opSub2 == 2)
+                        else if (opSub2 == 2)
                             c.inativar(ag);
+                        else if (opSub2 == 3)
+                            contas.ler(c, ag);
                         break;
                     case 3:
                         int op3 = 3;

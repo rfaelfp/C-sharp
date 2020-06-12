@@ -1,26 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Questao2
 {
     class Contas
     {
-        Clientes[] clientes;
-        ContasDados dados;
+        ContasDados[] dados;
 
-        public Contas (Clientes[] Clientes, ContasDados Dados)
+        public Contas(ContasDados[] Dados)
         {
-            clientes = Clientes;
             dados = Dados;
         }
-
-        public void ler()
+        public void iniciarVet()
         {
-            int escolha;
+            for (int i = 0; i < dados.Length; i++)
+                dados[i] = new ContasDados(0, 0, 0, 0, -1);
+        }
+        public void ler(Clientes c, Agencia ag)
+        {
+            int escolhaC, escolhaAg;
+            ag.printAg();
+            Console.WriteLine("Escolha a agência: ");
+            escolhaAg = Convert.ToInt32(Console.ReadLine());
+            c.PrintCliente(escolhaAg);
             Console.WriteLine("Escolha o cliente que deseja abrir a conta: ");
-            escolha = Convert.ToInt32(Console.ReadLine());
-            clientes[escolha]
+            escolhaC = Convert.ToInt32(Console.ReadLine());
+            dados[escolhaC].LerDadosConta(ref escolhaC);
         }
     }
 }

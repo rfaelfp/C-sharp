@@ -10,11 +10,11 @@ namespace Questao2
         {
             this.dados = Dados;
         }
-        public void iniciarVet ()
+        public void iniciarVet()
         {
-            for(int i = 0; i < dados.Length; i++)
+            for (int i = 0; i < dados.Length; i++)
                 dados[i] = new AgenciaDados("", "", "");
-        }       
+        }
 
         public void lerAgencia()
         {
@@ -32,12 +32,12 @@ namespace Questao2
                 }
             }
         }
-        public void printAg ()
+        public void printAg()
         {
             for (int i = 0; i < dados.Length; i++)
                 dados[i].print(ref i);
         }
-        public void excluirAgencia ()
+        public void excluirAgencia()
         {
             int escolha;
             printAg();

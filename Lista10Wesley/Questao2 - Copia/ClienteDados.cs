@@ -56,5 +56,9 @@ namespace Questao2
             if (numAgencia == agencia)
                 Console.WriteLine($"[{num}] - Cliente: {nome} - CPF: {cpf} - Tel.: {telefone}");
         }
+        public void ListarClientes (ref int num)
+        {
+            Console.WriteLine($"[{num}] - Cliente: {nome} - CPF: {cpf} - Tel.: {telefone}");
+        }
     }
 }

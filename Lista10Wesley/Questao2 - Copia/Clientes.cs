@@ -51,5 +51,10 @@ namespace Questao2
             clientes[cli].inativa();
 
         }
+        public void PrintCliente(int agencia)
+        {
+            for (int i = 0; i < clientes.Length; i++)
+                clientes[i].listaClienteAgencia(ref agencia, ref i);
+        }
     }
 }
