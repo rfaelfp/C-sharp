@@ -17,11 +17,24 @@ namespace Questao2
                 clientes[i] = new ClienteDados("", "", "", "", false, false, 0, true, 0, 0, 0, 0);
             }
         }
+        public int PosicaoLivreVet()
+        {
+            int posicao = 0;
+            for (int i = 0; i < clientes.Length; i++)
+            {
+                if (clientes[i].PosicaoLivre() == true)
+                {
+                    posicao = i;
+                    break;
+                }
+            }
+            return posicao;
+        }
 
         public void cadastrar(Agencia ag)
         {
             string ver;
-            for (int i = 0; i < clientes.Length; i++)
+            for (int i = PosicaoLivreVet(); i < clientes.Length; i++)
             {
                 ag.printAg();
                 clientes[i].ler();
@@ -52,7 +65,6 @@ namespace Questao2
             int agencia = GetAgencia(ag);
             for (int i = 0; i < clientes.Length; i++)
                 clientes[i].listaClienteAgencia(ref agencia, ref i);
-            Rodape();
         }
         public int GetAgencia(Agencia ag)
         {
@@ -91,14 +103,14 @@ namespace Questao2
         {
             double total = 0;
             int agencia = GetAgencia(ag);
-            for(int i = 0; i < clientes.Length; i++)
+            for (int i = 0; i < clientes.Length; i++)
             {
                 total += (clientes[i].SomaContasAgencia(agencia));
             }
             Console.WriteLine($"O saldo total da agência [{agencia}] é R${Math.Round(total, 2)}");
             Rodape();
         }
-        public void SaldoTotalCorrente (Agencia ag)
+        public void SaldoTotalCorrente(Agencia ag)
         {
             double total = 0;
             int agencia = GetAgencia(ag);
@@ -119,6 +131,59 @@ namespace Questao2
             }
             Console.WriteLine($"O saldo total da agência [{agencia}] na conta poupança é R${Math.Round(total, 2)}");
             Rodape();
+        }
+        public void DepositarCorrente(Agencia ag)
+        {
+            double valor;
+            PrintCliente(ag);
+            int numCliente;
+            Console.WriteLine("Escolha o cliente: ");
+            numCliente = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Digite o valor: ");
+            valor = Convert.ToDouble(Console.ReadLine());
+            clientes[numCliente].DepositarCorrente(valor);
+
+        }
+        public void DepositarPoupanca(Agencia ag)
+        {
+            double valor;
+            PrintCliente(ag);
+            int numCliente;
+            Console.WriteLine("Escolha o cliente: ");
+            numCliente = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Digite o valor: ");
+            valor = Convert.ToDouble(Console.ReadLine());
+            clientes[numCliente].DepositarCorrente(valor);
+        }
+        public void SaqueCorrente(Agencia ag)
+        {
+            double valor;
+            PrintCliente(ag);
+            int numCliente;
+            Console.WriteLine("Escolha o cliente: ");
+            numCliente = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Digite o valor: ");
+            valor = Convert.ToDouble(Console.ReadLine());
+            clientes[numCliente].SaqueCorrente(valor);
+        }
+        public void SaquePoupanca(Agencia ag)
+        {
+            double valor;
+            PrintCliente(ag);
+            int numCliente;
+            Console.WriteLine("Escolha o cliente: ");
+            numCliente = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Digite o valor: ");
+            valor = Convert.ToDouble(Console.ReadLine());
+            clientes[numCliente].SaquePoupanca(valor);
+        }
+        public void TransfCorrentePoupanca(Agencia ag)
+        {
+            int numCliente;
+            PrintCliente(ag);
+            Console.WriteLine("Escolha o cliente: ");
+            numCliente = Convert.ToInt32(Console.ReadLine());
+            clientes[numCliente].TransfCorrentePoupanca();
         }
         public void Rodape()
         {

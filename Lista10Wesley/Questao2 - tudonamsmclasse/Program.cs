@@ -35,7 +35,7 @@ namespace Questao2
                         else if (opSub1 == 5)
                             c.SaldoTotalBancoCorrente();
                         else if (opSub1 == 6)
-                            c.SaldoTotalBancoCorrente();
+                            c.SaldoTotalBancoPoupanca();
                         break;
                     case 2:
                         int op2 = 2;
@@ -57,6 +57,25 @@ namespace Questao2
                     case 3:
                         int op3 = 3;
                         opM.PrintOpcao(opM.DefineOpcao(ref op3));
+                        int opSub3 = opM.escolher();
+                        if (opSub3 == 1)
+                            c.DepositarCorrente(ag);
+                        else if (opSub3 == 2)
+                            c.DepositarPoupanca(ag);
+                        else if (opSub3 == 3)
+                            c.SaqueCorrente(ag);
+                        else if (opSub3 == 4)
+                            c.SaquePoupanca(ag);
+                        else if (opSub3 == 5)
+                            c.TransfCorrentePoupanca(ag);
+                        else if (opSub3 == 6)
+                            c.DepositarPoupanca(ag);
+                        else if (opSub3 == 7)
+                            c.DepositarPoupanca(ag);
+                        else if (opSub3 == 8)
+                            c.DepositarPoupanca(ag);
+                        else if (opSub3 == 9)
+                            c.DepositarPoupanca(ag);
                         break;
                     default:
                         break;

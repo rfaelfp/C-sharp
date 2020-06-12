@@ -22,7 +22,7 @@ namespace Questao2
             string[] opcao = { };
             if (escolha == 0)
             {
-                string[] opcoesMenu = { "Operações de agência", "Operação de conta", "Depósito/Transferência/Saldo" };
+                string[] opcoesMenu = { "Operações do banco", "Operação da agência", "Operações da conta" };
                 opcao = opcoesMenu;
             }
             else if (escolha == 1)
