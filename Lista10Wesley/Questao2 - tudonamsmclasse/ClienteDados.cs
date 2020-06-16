@@ -153,18 +153,30 @@ namespace Questao2
         public void DepositarCorrente(double valor)
         {
             saldoCorrente += valor;
+            Console.Write($"Saldo: {saldoCorrente - valor} - Valor depositado: {valor}\nTotal: {saldoCorrente}\n");
+            Console.ReadLine();
+            Console.Clear();
         }
         public void DepositarPoupanca(double valor)
         {
             saldoPoupanca += valor;
+            Console.Write($"Saldo: {saldoPoupanca - valor} - Valor depositado: {valor}\nTotal: {saldoPoupanca}\n");
+            Console.ReadLine();
+            Console.Clear();
         }
         public void SaqueCorrente(double valor)
         {
             saldoCorrente -= valor;
+            Console.Write($"Saldo: {saldoCorrente - valor} - Valor do saque: {valor}\nTotal: {saldoCorrente}\n");
+            Console.ReadLine();
+            Console.Clear();
         }
         public void SaquePoupanca(double valor)
         {
             saldoPoupanca -= valor;
+            Console.Write($"Saldo: {saldoPoupanca - valor} - Valor do saque: {valor}\nTotal: {saldoPoupanca}\n");
+            Console.ReadLine();
+            Console.Clear();
         }
         public void TransfCorrentePoupanca()
         {
@@ -234,6 +246,14 @@ namespace Questao2
             else
                 Console.WriteLine($"O cliente {nome} de CPF {cpf} não possui conta poupança!");
         }
+        public void VerificaCorrente ()
+        {
 
+        }
+        public void VerificaClientes(ref bool ver)
+        {
+            if (nome != "" && cpf != "" && telefone != "" && nascimento != "")
+                ver = true;
+        }
     }
 }

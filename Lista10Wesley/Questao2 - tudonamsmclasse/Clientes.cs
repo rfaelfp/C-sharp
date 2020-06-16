@@ -89,6 +89,13 @@ namespace Questao2
             }
             return agencia;
         }
+        public bool VerificaCliente()
+        {
+            bool ver = false;
+            for (int i = 0; i < clientes.Length; i++)
+                clientes[i].VerificaClientes(ref ver);
+            return ver;
+        }
         public void SaldoTotalBanco()
         {
             double total = 0;
@@ -147,103 +154,201 @@ namespace Questao2
             int agencia = GetAgencia(ag);
             if (agencia != -1)
             {
-            for (int i = 0; i < clientes.Length; i++)
-            {
-                total += (clientes[i].SomaPoupancaAgencia(agencia));
-            }
-            Console.WriteLine($"O saldo total da agência [{agencia}] na conta poupança é {total.ToString("C")}.");
-            Rodape();
+                for (int i = 0; i < clientes.Length; i++)
+                {
+                    total += (clientes[i].SomaPoupancaAgencia(agencia));
+                }
+                Console.WriteLine($"O saldo total da agência [{agencia}] na conta poupança é {total.ToString("C")}.");
+                Rodape();
             }
         }
         public void DepositarCorrente(Agencia ag)
         {
             double valor;
-            if(PrintCliente(ag) == true)
+            if (PrintCliente(ag) == true)
             {
-            int numCliente;
-            Console.WriteLine("Escolha o cliente: ");
-            numCliente = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Digite o valor: ");
-            valor = Convert.ToDouble(Console.ReadLine());
-            clientes[numCliente].DepositarCorrente(valor);
-            } 
+                if (VerificaCliente() == true)
+                {
+                    int numCliente;
+                    Console.Write("Escolha o cliente: ");
+                    numCliente = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Digite o valor: ");
+                    valor = Convert.ToDouble(Console.ReadLine());
+                    clientes[numCliente].DepositarCorrente(valor);
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+                }
+            }
 
 
         }
         public void DepositarPoupanca(Agencia ag)
         {
             double valor;
-            if(PrintCliente(ag) == true)
+            if (PrintCliente(ag) == true)
             {
-            PrintCliente(ag);
-            int numCliente;
-            Console.WriteLine("Escolha o cliente: ");
-            numCliente = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Digite o valor: ");
-            valor = Convert.ToDouble(Console.ReadLine());
-            clientes[numCliente].DepositarCorrente(valor);
-            Rodape();
+                if (VerificaCliente() == true)
+                {
+                    int numCliente;
+                    Console.WriteLine("Escolha o cliente: ");
+                    numCliente = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Digite o valor: ");
+                    valor = Convert.ToDouble(Console.ReadLine());
+                    clientes[numCliente].DepositarCorrente(valor);
+                    Rodape();
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+                }
             }
         }
         public void SaqueCorrente(Agencia ag)
         {
             double valor;
-            PrintCliente(ag);
-            int numCliente;
-            Console.WriteLine("Escolha o cliente: ");
-            numCliente = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Digite o valor: ");
-            valor = Convert.ToDouble(Console.ReadLine());
-            clientes[numCliente].SaqueCorrente(valor);
-            Rodape();
+            if (PrintCliente(ag) == true)
+            {
+                if (VerificaCliente() == true)
+                {
+                    int numCliente;
+                    Console.WriteLine("Escolha o cliente: ");
+                    numCliente = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Digite o valor: ");
+                    valor = Convert.ToDouble(Console.ReadLine());
+                    clientes[numCliente].SaqueCorrente(valor);
+                    Rodape();
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+                }
+            }
         }
         public void SaquePoupanca(Agencia ag)
         {
             double valor;
-            PrintCliente(ag);
-            int numCliente;
-            Console.WriteLine("Escolha o cliente: ");
-            numCliente = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Digite o valor: ");
-            valor = Convert.ToDouble(Console.ReadLine());
-            clientes[numCliente].SaquePoupanca(valor);
-            Rodape();
+            if (PrintCliente(ag) == true)
+            {
+                if (VerificaCliente() == true)
+                {
+                    int numCliente;
+                    Console.WriteLine("Escolha o cliente: ");
+                    numCliente = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Digite o valor: ");
+                    valor = Convert.ToDouble(Console.ReadLine());
+                    clientes[numCliente].SaquePoupanca(valor);
+                    Rodape();
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+                }
+            }
         }
         public void TransfCorrentePoupanca(Agencia ag)
         {
             int numCliente;
-            PrintCliente(ag);
-            Console.WriteLine("Escolha o cliente: ");
-            numCliente = Convert.ToInt32(Console.ReadLine());
-            clientes[numCliente].TransfCorrentePoupanca();
-            Rodape();
+            if (PrintCliente(ag) == true)
+            {
+                if (VerificaCliente() == true)
+                {
+                    Console.WriteLine("Escolha o cliente: ");
+                    numCliente = Convert.ToInt32(Console.ReadLine());
+                    clientes[numCliente].TransfCorrentePoupanca();
+                    Rodape();
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+                }
+            }
         }
         public void TransfPoupancaCorrente(Agencia ag)
         {
             int numCliente;
-            PrintCliente(ag);
-            Console.WriteLine("Escolha o cliente: ");
-            numCliente = Convert.ToInt32(Console.ReadLine());
-            clientes[numCliente].TransfCorrentePoupanca();
-            Rodape();
+            if (PrintCliente(ag) == true)
+            {
+                if (VerificaCliente() == true)
+                {
+                    Console.WriteLine("Escolha o cliente: ");
+                    numCliente = Convert.ToInt32(Console.ReadLine());
+                    clientes[numCliente].TransfCorrentePoupanca();
+                    Rodape();
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+                }
+            }
+
         }
         public void SaldoCorrente(Agencia ag)
         {
             int numCliente;
-            PrintCliente(ag);
-            Console.WriteLine("Escolha o cliente: ");
-            numCliente = Convert.ToInt32(Console.ReadLine());
-            clientes[numCliente].SaldoCorrente();
-            Rodape();
+            if (PrintCliente(ag) == true)
+            {
+                if (VerificaCliente() == true)
+                {
+                    Console.WriteLine("Escolha o cliente: ");
+                    numCliente = Convert.ToInt32(Console.ReadLine());
+                    clientes[numCliente].SaldoCorrente();
+                    Rodape();
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+                }
+            }
+
         }
         public void SaldoPoupanca(Agencia ag)
         {
             int numCliente;
-            PrintCliente(ag);
-            Console.WriteLine("Escolha o cliente: ");
-            numCliente = Convert.ToInt32(Console.ReadLine());
-            clientes[numCliente].SaldoPoupanca();
-            Rodape();
+            if (PrintCliente(ag) == true)
+            {
+                if (VerificaCliente() == true)
+                {
+                    Console.WriteLine("Escolha o cliente: ");
+                    numCliente = Convert.ToInt32(Console.ReadLine());
+                    clientes[numCliente].SaldoPoupanca();
+                    Rodape();
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+
+                }
+            }
+        }
+        public void VerificaCorrente(Agencia ag)
+        {
+            int numCliente;
+            if (PrintCliente(ag) == true)
+            {
+                if (VerificaCliente() == true)
+                {
+                    Console.WriteLine("Escolha o cliente: ");
+                    numCliente = Convert.ToInt32(Console.ReadLine());
+                    clientes[numCliente].SaldoPoupanca();
+                    Rodape();
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+
+                }
+            }
         }
         public void Rodape()
         {
