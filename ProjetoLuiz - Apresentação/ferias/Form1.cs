@@ -85,9 +85,7 @@ namespace ferias
             if (txtMasculino.Checked)
                 c.Parameters.AddWithValue("@sexo", 'M');
             else
-            {
                 c.Parameters.AddWithValue("@sexo", 'F');
-            }
 
             try
             {
@@ -135,7 +133,7 @@ namespace ferias
                     // Criando string de conexão.
                     SqlConnection conn = new SqlConnection("Data Source=localhost;Persist Security Info=True;Initial Catalog=Ferias; User ID=sa;Password=167421es");
 
-                    // Declarando variável de string com o comando SQL de update.
+                    // Declarando variável de string com o comando SQL de delete.
                     string SQL = $"delete MarcaFerias where id = {valorId}";
 
                     // Instanciando a conexão passando a string de conexão e a string de insert
@@ -190,5 +188,25 @@ namespace ferias
             txtTrintaDias.Checked = false;
             txtDataFim.Text = txtDataInicio.Text;
         }
-    }    
+
+        private void CarregaCampos(object sender, DataGridViewCellEventArgs e)
+        {
+            // Preenche os campos com os valores presentes nas celulas da linha quando clicado duas vezes.
+            txtNome.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
+            txtcpf.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
+            txtDataInicio.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
+            txtDataFim.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
+            if (dataGridView.CurrentRow.Cells[2].Value.ToString() == "M")
+            {
+                txtMasculino.Checked = true;
+                txtFeminino.Checked = false;
+            } else
+            {
+                txtMasculino.Checked = false;
+                txtFeminino.Checked = true;
+            }
+
+
+        }
+    }
 }

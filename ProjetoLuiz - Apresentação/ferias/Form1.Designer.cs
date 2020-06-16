@@ -148,6 +148,7 @@
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(543, 260);
             this.dataGridView.TabIndex = 9;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarregaCampos);
             // 
             // nomeDataGridViewTextBoxColumn
             // 
