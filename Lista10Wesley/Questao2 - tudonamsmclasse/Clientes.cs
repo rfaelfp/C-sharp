@@ -56,11 +56,20 @@ namespace Questao2
         {
             int cli;
             int agencia = GetAgencia(ag);
-            for (int i = 0; i < clientes.Length; i++)
-                clientes[i].listaClienteAgencia(ref agencia, ref i);
-            Console.Write("Escolha o cliente que deseja inativar: ");
-            cli = Convert.ToInt32(Console.ReadLine());
-            clientes[cli].inativa();
+            if (agencia != -1)
+                if (VerificaCliente() == true)
+                {
+                    for (int i = 0; i < clientes.Length; i++)
+                        clientes[i].listaClienteAgencia(ref agencia, ref i);
+                    Console.Write("Escolha o cliente que deseja inativar: ");
+                    cli = Convert.ToInt32(Console.ReadLine());
+                    clientes[cli].inativa();
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+                }
 
         }
         public bool PrintCliente(Agencia ag)
@@ -271,7 +280,6 @@ namespace Questao2
                         Console.Write("Digite o valor: ");
                         valor = Convert.ToDouble(Console.ReadLine());
                         clientes[numCliente].SaquePoupanca(valor);
-                        Rodape();
                     }
                     else
                     {

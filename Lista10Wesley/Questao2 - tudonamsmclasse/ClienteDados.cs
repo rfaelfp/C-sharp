@@ -41,8 +41,8 @@ namespace Questao2
             Console.Write("Data nascimento: ");
             nascimento = Console.ReadLine();
             Console.Write("Conta corrente: (s/n) ");
-            string inputString = Console.ReadLine();
-            if (inputString.ToLower() == "s")
+            string inputString = Console.ReadLine().ToLower();
+            if (inputString == "s" || inputString == "sim" || inputString == "1")
             {
                 corrente = true;
                 Console.Write("Codigo conta corrente: ");
@@ -50,8 +50,8 @@ namespace Questao2
             }
 
             Console.Write("Conta poupança: (s/n) ");
-            inputString = Console.ReadLine();
-            if (inputString.ToLower() == "s")
+            inputString = Console.ReadLine().ToLower();
+            if (inputString == "s" || inputString == "sim" || inputString == "1")
             {
                 poupanca = true;
                 Console.Write("Codigo conta poupanca: ");
@@ -61,8 +61,8 @@ namespace Questao2
         public void inativa()
         {
             Console.Write("Confirme a inativação: (s/n)");
-            string inputString = Console.ReadLine();
-            if (inputString.ToLower() == "s")
+            string inputString = Console.ReadLine().ToLower();
+            if (inputString == "s" || inputString == "sim" || inputString == "1")
                 ativo = false;
             Console.Clear();
         }
@@ -176,11 +176,10 @@ namespace Questao2
         }
         public void DepositarPoupanca(double valor)
         {
+            double porcento = valor * 0.04;
+            Console.WriteLine("A conta poupança possui taxa de rendimento de 4% sobre o valor depositado.");
             saldoPoupanca += valor;
-            Console.Write($"Saldo: {saldoPoupanca - valor} - Valor depositado: {valor}\nTotal: {saldoPoupanca}\n");
-            Console.Write("\nAperte ENTER para voltar...");
-            Console.ReadLine();
-            Console.Clear();
+            Console.Write($"Saldo anterior: {saldoPoupanca - valor} - Valor depositado: {valor}\nTotal: {saldoPoupanca + porcento} - Rendimento: {porcento}\n");
         }
         public void SaqueCorrente(double valor)
         {
@@ -195,7 +194,7 @@ namespace Questao2
         public void SaquePoupanca(double valor)
         {
             saldoPoupanca -= valor;
-            Console.Write($"Saldo: {saldoPoupanca - valor} - Valor do saque: {valor}\nTotal: {saldoPoupanca}\n");
+            Console.Write($"Saldo: {saldoPoupanca} - Valor do saque: {valor}\nTotal: {saldoPoupanca}\n");
             Console.Write("\nAperte ENTER para voltar...");
             Console.ReadLine();
             Console.Clear();
@@ -297,7 +296,7 @@ namespace Questao2
                         limiteCorrente -= valor;
                         double saldoDevedor = 1000 - limiteCorrente;
                         Console.WriteLine($"Saldo devedor: {saldoDevedor}");
-                        Console.WriteLine($"Limite: {limiteCorrente}");
+                        Console.WriteLine($"Limite: {limiteCorrente + porcento}");
                     }
                 }
 
