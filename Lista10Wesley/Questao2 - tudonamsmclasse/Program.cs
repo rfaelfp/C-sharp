@@ -75,7 +75,7 @@ namespace Questao2
                         else if (opSub3 == 8)
                             c.SaldoPoupanca(ag);
                         else if (opSub3 == 9)
-                            c.DepositarPoupanca(ag);
+                            c.VerificaLimiteCorrente(ag);
                         else if (opSub3 == 10) ;
                         break;
                     default:

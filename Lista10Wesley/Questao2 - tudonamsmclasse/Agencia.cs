@@ -55,9 +55,7 @@ namespace Questao2
                 {
                     ver = true;
                     Console.WriteLine("Não há agências cadastradas!");
-                    Console.Write($"\nPressione ENTER para voltar ao menu...");
-                    Console.ReadLine();
-                    Console.Clear();
+                    Rodape();
                 }
             }
             return ver;
@@ -72,7 +70,11 @@ namespace Questao2
             Console.BackgroundColor = ConsoleColor.Red;
             Console.Write($"\nAgência {escolha} excluída\n");
             Console.ResetColor();
-            Console.Write("\nPressione ENTER para voltar ao menu...");
+            Rodape();
+        }
+        public void Rodape()
+        {
+            Console.Write("\nAperte ENTER para voltar...");
             Console.ReadLine();
             Console.Clear();
         }

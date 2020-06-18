@@ -13,9 +13,7 @@ namespace Questao2
         public void iniciarVet()
         {
             for (int i = 0; i < clientes.Length; i++)
-            {
-                clientes[i] = new ClienteDados("", "", "", "", false, false, 0, true, 0, 0, 0, 0);
-            }
+                clientes[i] = new ClienteDados("", "", "", "", false, false, 0, true, 0, 0, 0, 0, 1000);
         }
         public int PosicaoLivreVet()
         {
@@ -172,9 +170,17 @@ namespace Questao2
                     int numCliente;
                     Console.Write("Escolha o cliente: ");
                     numCliente = Convert.ToInt32(Console.ReadLine());
-                    Console.Write("Digite o valor: ");
-                    valor = Convert.ToDouble(Console.ReadLine());
-                    clientes[numCliente].DepositarCorrente(valor);
+                    if (clientes[numCliente].VerificarExistenciaCorrente() == true)
+                    {
+                        Console.Write("Digite o valor: ");
+                        valor = Convert.ToDouble(Console.ReadLine());
+                        clientes[numCliente].DepositarCorrente(valor);
+                    }
+                    else
+                    {
+                        Console.WriteLine("O cliente não possui conta corrente.");
+                        Rodape();
+                    }
                 }
                 else
                 {
@@ -193,12 +199,20 @@ namespace Questao2
                 if (VerificaCliente() == true)
                 {
                     int numCliente;
-                    Console.WriteLine("Escolha o cliente: ");
+                    Console.Write("Escolha o cliente: ");
                     numCliente = Convert.ToInt32(Console.ReadLine());
-                    Console.Write("Digite o valor: ");
-                    valor = Convert.ToDouble(Console.ReadLine());
-                    clientes[numCliente].DepositarCorrente(valor);
-                    Rodape();
+                    if (clientes[numCliente].VerificarExistenciaPoupanca() == true)
+                    {
+                        Console.Write("Digite o valor: ");
+                        valor = Convert.ToDouble(Console.ReadLine());
+                        clientes[numCliente].DepositarPoupanca(valor);
+                        Rodape();
+                    }
+                    else
+                    {
+                        Console.WriteLine("O cliente não possui conta poupança.");
+                        Rodape();
+                    }
                 }
                 else
                 {
@@ -215,12 +229,24 @@ namespace Questao2
                 if (VerificaCliente() == true)
                 {
                     int numCliente;
-                    Console.WriteLine("Escolha o cliente: ");
+                    Console.Write("Escolha o cliente: ");
                     numCliente = Convert.ToInt32(Console.ReadLine());
-                    Console.Write("Digite o valor: ");
-                    valor = Convert.ToDouble(Console.ReadLine());
-                    clientes[numCliente].SaqueCorrente(valor);
-                    Rodape();
+                    if (clientes[numCliente].VerificarExistenciaCorrente() == true)
+                    {
+                        Console.Write("Digite o valor: ");
+                        valor = Convert.ToDouble(Console.ReadLine());
+                        if (clientes[numCliente].VerificarSaqueCorrente(valor) == true)
+                            clientes[numCliente].SaqueCorrente(valor);
+                        else
+                            clientes[numCliente].SaqueLimiteCorrente(valor);
+                        Rodape();
+                    }
+                    else
+                    {
+                        Console.WriteLine("O cliente não possui conta corrente.");
+                        Rodape();
+                    }
+
                 }
                 else
                 {
@@ -237,12 +263,21 @@ namespace Questao2
                 if (VerificaCliente() == true)
                 {
                     int numCliente;
-                    Console.WriteLine("Escolha o cliente: ");
+                    Console.Write("Escolha o cliente: ");
                     numCliente = Convert.ToInt32(Console.ReadLine());
-                    Console.Write("Digite o valor: ");
-                    valor = Convert.ToDouble(Console.ReadLine());
-                    clientes[numCliente].SaquePoupanca(valor);
-                    Rodape();
+                    if (clientes[numCliente].VerificarExistenciaPoupanca() == true)
+                    {
+
+                        Console.Write("Digite o valor: ");
+                        valor = Convert.ToDouble(Console.ReadLine());
+                        clientes[numCliente].SaquePoupanca(valor);
+                        Rodape();
+                    }
+                    else
+                    {
+                        Console.WriteLine("O cliente não possui conta poupança.");
+                        Rodape();
+                    }
                 }
                 else
                 {
@@ -258,10 +293,18 @@ namespace Questao2
             {
                 if (VerificaCliente() == true)
                 {
-                    Console.WriteLine("Escolha o cliente: ");
+                    Console.Write("Escolha o cliente: ");
                     numCliente = Convert.ToInt32(Console.ReadLine());
-                    clientes[numCliente].TransfCorrentePoupanca();
-                    Rodape();
+                    if (clientes[numCliente].VerificarExistenciaCorrente() == true && clientes[numCliente].VerificarExistenciaPoupanca() == true)
+                    {
+                        clientes[numCliente].TransfCorrentePoupanca();
+                        Rodape();
+                    }
+                    else
+                    {
+                        Console.WriteLine("O cliente não possui conta correntou e/ou conta poupança");
+                        Rodape();
+                    }
                 }
                 else
                 {
@@ -277,10 +320,18 @@ namespace Questao2
             {
                 if (VerificaCliente() == true)
                 {
-                    Console.WriteLine("Escolha o cliente: ");
+                    Console.Write("Escolha o cliente: ");
                     numCliente = Convert.ToInt32(Console.ReadLine());
-                    clientes[numCliente].TransfCorrentePoupanca();
-                    Rodape();
+                    if (clientes[numCliente].VerificarExistenciaCorrente() == true && clientes[numCliente].VerificarExistenciaPoupanca() == true)
+                    {
+                        clientes[numCliente].TransfCorrentePoupanca();
+                        Rodape();
+                    }
+                    else
+                    {
+                                                Console.WriteLine("O cliente não possui conta correntou e/ou conta poupança");
+                        Rodape();
+                    }
                 }
                 else
                 {
@@ -297,7 +348,7 @@ namespace Questao2
             {
                 if (VerificaCliente() == true)
                 {
-                    Console.WriteLine("Escolha o cliente: ");
+                    Console.Write("Escolha o cliente: ");
                     numCliente = Convert.ToInt32(Console.ReadLine());
                     clientes[numCliente].SaldoCorrente();
                     Rodape();
@@ -317,7 +368,7 @@ namespace Questao2
             {
                 if (VerificaCliente() == true)
                 {
-                    Console.WriteLine("Escolha o cliente: ");
+                    Console.Write("Escolha o cliente: ");
                     numCliente = Convert.ToInt32(Console.ReadLine());
                     clientes[numCliente].SaldoPoupanca();
                     Rodape();
@@ -337,9 +388,29 @@ namespace Questao2
             {
                 if (VerificaCliente() == true)
                 {
-                    Console.WriteLine("Escolha o cliente: ");
+                    Console.Write("Escolha o cliente: ");
                     numCliente = Convert.ToInt32(Console.ReadLine());
                     clientes[numCliente].SaldoPoupanca();
+                    Rodape();
+                }
+                else
+                {
+                    Console.WriteLine("Não há clientes cadastrados na agência!");
+                    Rodape();
+
+                }
+            }
+        }
+        public void VerificaLimiteCorrente(Agencia ag)
+        {
+            int numCliente;
+            if (PrintCliente(ag) == true)
+            {
+                if (VerificaCliente() == true)
+                {
+                    Console.Write("Escolha o cliente: ");
+                    numCliente = Convert.ToInt32(Console.ReadLine());
+                    clientes[numCliente].VerificaLimiteCorrente();
                     Rodape();
                 }
                 else

@@ -50,6 +50,5 @@ namespace Questao2
                 Console.WriteLine($"[{i + 1}] - {op[i]}");
             }
         }
-
     }
 }

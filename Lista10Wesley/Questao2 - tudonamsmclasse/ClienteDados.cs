@@ -7,10 +7,10 @@ namespace Questao2
         private string nome, cpf, telefone, nascimento;
         private bool corrente, poupanca, ativo;
         private int agencia, codigoCorrente, codigoPoupanca;
-        private double saldoCorrente, saldoPoupanca;
+        private double saldoCorrente, saldoPoupanca, limiteCorrente;
 
 
-        public ClienteDados(string Nome, string Cpf, string Telefone, string Nascimento, bool Corrente, bool Poupanca, int Agencia, bool Ativo, int CodigoCorrente, int CodigoPoupanca, double SaldoCorrente, double SaldoPoupanca)
+        public ClienteDados(string Nome, string Cpf, string Telefone, string Nascimento, bool Corrente, bool Poupanca, int Agencia, bool Ativo, int CodigoCorrente, int CodigoPoupanca, double SaldoCorrente, double SaldoPoupanca, double LimiteCorrente)
         {
             nome = Nome;
             cpf = Cpf;
@@ -24,6 +24,8 @@ namespace Questao2
             codigoPoupanca = CodigoPoupanca;
             saldoCorrente = SaldoCorrente;
             saldoPoupanca = SaldoPoupanca;
+            limiteCorrente = LimiteCorrente;
+
         }
         public void ler()
         {
@@ -154,20 +156,39 @@ namespace Questao2
         {
             saldoCorrente += valor;
             Console.Write($"Saldo: {saldoCorrente - valor} - Valor depositado: {valor}\nTotal: {saldoCorrente}\n");
+            Console.Write("\nAperte ENTER para voltar...");
             Console.ReadLine();
             Console.Clear();
+        }
+        public bool VerificarExistenciaCorrente ()
+        {
+            bool ver = false;
+            if (corrente == true)
+                ver = true;
+            return ver;
+        }
+        public bool VerificarExistenciaPoupanca()
+        {
+            bool ver = false;
+            if (poupanca == true)
+                ver = true;
+            return ver;
         }
         public void DepositarPoupanca(double valor)
         {
             saldoPoupanca += valor;
             Console.Write($"Saldo: {saldoPoupanca - valor} - Valor depositado: {valor}\nTotal: {saldoPoupanca}\n");
+            Console.Write("\nAperte ENTER para voltar...");
             Console.ReadLine();
             Console.Clear();
         }
         public void SaqueCorrente(double valor)
         {
+
+            Console.Write($"Saldo: {saldoCorrente}");
             saldoCorrente -= valor;
-            Console.Write($"Saldo: {saldoCorrente - valor} - Valor do saque: {valor}\nTotal: {saldoCorrente}\n");
+            Console.Write($" - Valor do saque: {valor}\nTotal: {saldoCorrente}\n");
+            Console.Write("\nAperte ENTER para voltar...");
             Console.ReadLine();
             Console.Clear();
         }
@@ -175,6 +196,7 @@ namespace Questao2
         {
             saldoPoupanca -= valor;
             Console.Write($"Saldo: {saldoPoupanca - valor} - Valor do saque: {valor}\nTotal: {saldoPoupanca}\n");
+            Console.Write("\nAperte ENTER para voltar...");
             Console.ReadLine();
             Console.Clear();
         }
@@ -182,11 +204,11 @@ namespace Questao2
         {
             bool ver = false;
             double valor;
-            Console.WriteLine($"Saldo conta corrente: R$: {Math.Round(saldoCorrente, 2)}");
-            Console.WriteLine($"Saldo conta poupança: R$: {Math.Round(saldoPoupanca, 2)}");
+            Console.WriteLine($"Saldo conta corrente: {saldoCorrente.ToString("C")}");
+            Console.WriteLine($"Saldo conta poupança: {saldoPoupanca.ToString("C")}");
             do
             {
-                Console.WriteLine("Digite o valor da transferência: ");
+                Console.Write("Digite o valor da transferência: ");
                 valor = Convert.ToInt32(Console.ReadLine());
                 if (valor > saldoCorrente)
                     Console.WriteLine("Não há saldo suficiente!");
@@ -195,25 +217,25 @@ namespace Questao2
                     saldoCorrente -= valor;
                     saldoPoupanca += valor;
                     Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"Saldo conta corrente: R$: {Math.Round(saldoCorrente, 2)}");
+                    Console.WriteLine($"Saldo conta corrente: {saldoCorrente.ToString("C")}");
                     Console.ResetColor();
                     Console.BackgroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"Saldo conta poupança: R$: {Math.Round(saldoPoupanca, 2)}");
+                    Console.WriteLine($"Saldo conta poupança: {saldoPoupanca.ToString("C")}");
                     Console.ResetColor();
                     Console.WriteLine("Transferência realizada!");
                     ver = true;
                 }
-            } while (ver == false) ;
+            } while (ver == false);
         }
         public void TransfPoupancaCorrente()
         {
             bool ver = false;
             double valor;
-            Console.WriteLine($"Saldo conta corrente: R$: {Math.Round(saldoCorrente, 2)}");
-            Console.WriteLine($"Saldo conta poupança: R$: {Math.Round(saldoPoupanca, 2)}");
+            Console.WriteLine($"Saldo conta corrente: {saldoCorrente.ToString("C")}");
+            Console.WriteLine($"Saldo conta poupança: {saldoPoupanca.ToString("C")}");
             do
             {
-                Console.WriteLine("Digite o valor da transferência: ");
+                Console.Write("Digite o valor da transferência: ");
                 valor = Convert.ToInt32(Console.ReadLine());
                 if (valor > saldoPoupanca)
                     Console.WriteLine("Não há saldo suficiente!");
@@ -222,10 +244,10 @@ namespace Questao2
                     saldoPoupanca -= valor;
                     saldoCorrente += valor;
                     Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"Saldo conta corrente: R$: {Math.Round(saldoCorrente, 2)}");
+                    Console.WriteLine($"Saldo conta corrente: {saldoCorrente.ToString("C")}");
                     Console.ResetColor();
                     Console.BackgroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"Saldo conta poupança: R$: {Math.Round(saldoPoupanca, 2)}");
+                    Console.WriteLine($"Saldo conta poupança: {saldoPoupanca.ToString("C")}");
                     Console.ResetColor();
                     Console.WriteLine("Transferência realizada!");
                     ver = true;
@@ -235,20 +257,69 @@ namespace Questao2
         public void SaldoCorrente()
         {
             if (corrente == true)
-            Console.WriteLine($"O saldo da conta corrente é R$: {Math.Round(saldoCorrente, 2)}");
+            {
+                Console.WriteLine($"O saldo da conta corrente é {saldoCorrente.ToString("C")}");
+                Console.WriteLine($"O limite da conta corrente é {limiteCorrente.ToString("C")}");
+            }
             else
                 Console.WriteLine($"O cliente {nome} de CPF {cpf} não possui conta corrente!");
         }
         public void SaldoPoupanca()
         {
             if (poupanca == true)
-                Console.WriteLine($"O saldo da conta poupanca é R$: {Math.Round(saldoPoupanca, 2)}");
+                Console.WriteLine($"O saldo da conta poupanca é {saldoPoupanca.ToString("C")}");
             else
                 Console.WriteLine($"O cliente {nome} de CPF {cpf} não possui conta poupança!");
         }
-        public void VerificaCorrente ()
+        public void SaqueLimiteCorrente(double valor)
         {
+            string resp;
+            if (valor > saldoCorrente)
+            {
+                if (valor > limiteCorrente + saldoCorrente)
+                    Console.WriteLine($"O valor solicitado é maior que o limite do correntista\nSolicitado: {valor} - Limite: {limiteCorrente} - Saldo: {saldoCorrente}");
+                else
+                {
+                    double limite = valor - saldoCorrente, porcento = valor * 0.08;
+                    Console.WriteLine($"\nO saldo não é suficiente para operação.");
+                    Console.WriteLine($"Saldo: {saldoCorrente.ToString("C")} - Valor solicitado {valor.ToString("C")}");
+                    Console.WriteLine($"Você possui um limite de {limiteCorrente.ToString("C")}.");
+                    Console.WriteLine($"Será descontado da sua conta corrente {saldoCorrente.ToString("C")} e subtraido do seu limite {limite.ToString("C")} acrescido de 8% ({porcento.ToString("C")})");
+                    Console.Write("Gostaria de realizar o saque? (s/n)");
 
+                    resp = Console.ReadLine();
+                    if (resp != "s" && resp != "sim" && resp != "1")
+                        Console.WriteLine("Cancelado!");
+                    else
+                    {
+                        valor -= saldoCorrente;
+                        valor += valor * 0.08;
+                        limiteCorrente -= valor;
+                        double saldoDevedor = 1000 - limiteCorrente;
+                        Console.WriteLine($"Saldo devedor: {saldoDevedor}");
+                        Console.WriteLine($"Limite: {limiteCorrente}");
+                    }
+                }
+
+            }
+        }
+        public bool VerificarSaqueCorrente (double valor)
+        {
+            bool ver = false;
+            if (valor < saldoCorrente)
+                ver = true;
+
+            return ver;
+
+        }
+        public void VerificaLimiteCorrente()
+        {
+            if (corrente == true)
+            {
+                Console.WriteLine($"O limite da conta corrente é {limiteCorrente.ToString("C")}");
+            }
+            else
+                Console.WriteLine($"O cliente {nome} de CPF {cpf} não possui conta corrente!");
         }
         public void VerificaClientes(ref bool ver)
         {
