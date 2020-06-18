@@ -302,7 +302,7 @@ namespace Questao2
                     }
                     else
                     {
-                        Console.WriteLine("O cliente não possui conta correntou e/ou conta poupança");
+                        Console.WriteLine("O cliente não possui conta corrent e/ou conta poupança");
                         Rodape();
                     }
                 }
@@ -329,7 +329,7 @@ namespace Questao2
                     }
                     else
                     {
-                                                Console.WriteLine("O cliente não possui conta correntou e/ou conta poupança");
+                        Console.WriteLine("O cliente não possui conta corrente e/ou conta poupança");
                         Rodape();
                     }
                 }
