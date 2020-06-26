@@ -24,7 +24,7 @@ namespace ferias
         }
         private void limparCampos()
         {
-            // Define valores padrões para os campos da .
+            // Define valores padrões para os campos do nosso form.
             txtNome.Text = "";
             txtcpf.Text = "";
             txtDataInicio.Text = System.DateTime.Now.ToShortDateString();
